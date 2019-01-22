@@ -1,0 +1,5 @@
+.idea
+.git
+Doxygen
+*.png
+cmake-build-debug
