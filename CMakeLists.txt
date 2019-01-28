@@ -15,9 +15,8 @@ endif(APPLE)
 
 ## === SET VARIABLES ===
 ## -- for SFML --
-set(SFML_STATIC_LIBRARIES TRUE) # if you want to link SFML statically (for Windows)
-
 if(WIN32)
+    set(SFML_STATIC_LIBRARIES TRUE) # if you want to link SFML statically (for Windows)
     set(SFML_DIR "$ENV{ProgramW6432}/SFML/lib/cmake/SFML") # In most cases better set in the CMake cache
 endif(WIN32)
 if(APPLE)
