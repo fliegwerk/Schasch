@@ -12,7 +12,14 @@
  *Handling Bishops in the game of chess.
  */
 class Bishop : public Chesspiece, public Straightwalker{
+public:
+    std::list<class Tile> updatePossibleMoves(bool forKing, Tile* position);
+    std::list<class Tile> updateCoveredPieces();
+    std::list<class Tile> updateNailedPieces();
 
+private:
+    int directionSwitchXMod(__int8 direction);
+    int directionSwitchYMod(__int8 direction);
 };
 
 

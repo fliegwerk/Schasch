@@ -4,13 +4,29 @@
 
 #ifndef SCHASCH_STRAIGHTWALKER_HPP
 #define SCHASCH_STRAIGHTWALKER_HPP
+
+#include "../Tile.hpp"
+#include <list>
+#include <string>
+
 /**
  * Additional interface of the three chesspieces Queen, Rook and Bishop.
  */
-class Straightwalker
-{
+class Straightwalker {
 public:
     virtual ~Straightwalker() {}
+
     virtual void OverrideMe() = 0;
+
+    std::list<Tile> updatePossibleMoves(int xMod, int yMod, Tile *position);
+
+    std::list<Tile> updateNailedPieces(int xMod, int yMod, Tile position, std::string color);
+
+    std::list<Tile> updateCoveredPieces(int xMod, int yMod, Tile position, std::string color);
+
+private:
+    //TODO check if this has to be Optional?
+    std::list<Tile> checkForIntermediatePieces(int xMod, int yMod, Tile position, std::string color);
 };
+
 #endif //SCHASCH_STRAIGHTWALKER_HPP

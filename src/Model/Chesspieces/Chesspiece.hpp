@@ -19,7 +19,7 @@ public:
     ~Chesspiece() {}
     void setPosition(Tile* tile);
     Tile* getTile();
-    std::list<class Tile> updatePossibleMoves(bool forKing);
+    std::list<class Tile> updatePossibleMoves(bool forKing, Tile* position);
     std::list<class Tile> updateCoveredPieces();
     std::list<class Tile> updateNailedPieces();
     std::string getName();
