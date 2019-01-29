@@ -4,14 +4,5 @@
 
 #include "Move.hpp"
 
-void Move::registerObserver(Observer<Move> observer) {
-
-}
-
-void Move::unregisterObserver(Observer<Move> observer) {
-
-}
-
-void Move::notifyAll(Move state) {
-
-}
+Move::Move(const Tile &oldTile, const Tile &newTile, const int undoValue)
+        : oldTile(oldTile), newTile(newTile), undoValue(undoValue) {}

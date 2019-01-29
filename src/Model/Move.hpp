@@ -6,12 +6,27 @@
 #define SCHASCH_MOVE_HPP
 
 #include "Observable.hpp"
+#include "Chesspieces/Chesspiece.hpp"
+#include "Tile.hpp"
 
 /** Handles the execution or undo of a chess move.
     Every instance represents one move.
 */
-class Move : public Observable<Move> {
 
+class Move : public Observable<Move> {
+public :
+    ~Move();
+
+    Move(const Tile &oldTile, const Tile &newTile, const int undoValue);
+
+    void execute();
+
+    void undo();
+
+private:
+const Tile oldTile;
+const Tile newTile;
+const __int32 undoValue;
 };
 
 

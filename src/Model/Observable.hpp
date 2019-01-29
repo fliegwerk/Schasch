@@ -7,6 +7,10 @@
 
 #include <vector>
 #include "Observer.hpp"
+/**
+ * Observable Implementation of the observer pattern.
+ * @tparam T The object containing updated information.
+ */
 
 template<class T>
 class Observable {
@@ -14,8 +18,8 @@ private:
     std::vector<Observer<T>> observers;
 
 public:
-    Observable(const std::vector<Observer<T>> &observers);
-
+    Observable();
+    ~Observable();
     void registerObserver(Observer <T> observer);
 
     void unregisterObserver(Observer <T> observer);

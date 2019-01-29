@@ -5,6 +5,10 @@
 #ifndef SCHASCH_OBSERVER_HPP
 #define SCHASCH_OBSERVER_HPP
 
+/**
+ * Observer part of the observer pattern.
+ * @tparam T The object containing updated information.
+ */
 template<class T>
 class Observer {
 public:
