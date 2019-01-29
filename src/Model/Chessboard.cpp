@@ -6,10 +6,13 @@
 
 Chessboard::Chessboard() { buildChessboard(); }
 
+Chessboard::~Chessboard() {}
+
 void Chessboard::buildChessboard() {
     for (int column = 1; column < 9; ++column) {
         for (int row = 1; row < 9; ++row) {
-            std::string name = std::to_string((char)row + 64) + std::to_string(column);
+            char letter =  column + 64;
+            std::string name = letter + std::to_string(column);
             chessboard[column][row] = new Tile(name, column, row);
         }
     }
