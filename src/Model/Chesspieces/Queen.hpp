@@ -11,7 +11,7 @@
 /**
  *Handling Queens in the game of chess.
  */
-class Queen : public Chesspiece, public Parent, public Straightwalker {
+class Queen : public Chesspiece, public Straightwalker {
 
 };
 

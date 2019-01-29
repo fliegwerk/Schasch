@@ -10,7 +10,7 @@
 /**
  *Handling Kings in the game of chess.
  */
-class King : public Chesspiece, public Parent {
+class King : public Chesspiece {
 
 };
 

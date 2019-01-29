@@ -10,7 +10,7 @@
 /**
 *Handling Pawns in the game of chess.
 */
-class Pawn : public Chesspiece, public Parent {
+class Pawn : public Chesspiece{
 
 };
 

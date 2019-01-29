@@ -10,7 +10,7 @@
 /**
  *Handling Rooks in the game of chess.
  */
-class Rook : public Chesspiece, public Parent, public Straightwalker{
+class Rook : public Chesspiece, public Straightwalker{
 
 };
 

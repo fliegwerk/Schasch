@@ -6,21 +6,30 @@
 #define SCHASCH_CHESSPIECE_HPP
 
 #include "../Tile.hpp"
+#include <List>
 
 /**
- * Interface used for every of the six Chesspieces.
+ * Hullclass used for every of the six Chesspieces.
  */
+
 class Chesspiece
 {
 public:
-    virtual ~Chesspiece() {}
-    virtual void setPosition(Tile tile) = 0;
+    Chesspiece();
+    ~Chesspiece() {}
+    void setPosition(Tile* tile);
+    Tile* getTile();
+    std::list<class Tile> updatePossibleMoves(bool forKing);
+    std::list<class Tile> updateCoveredPieces();
+    std::list<class Tile> updateNailedPieces();
+    std::string getName();
+    std::string getColor();
 
+private:
+    Chesspiece* typeOfChesspiece;
+    Tile* tile;
+    std::string name;
+    std::string color;
 };
 
-class Parent
-{
-public:
-    virtual ~Parent();
-};
 #endif //SCHASCH_CHESSPIECE_HPP

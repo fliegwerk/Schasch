@@ -9,7 +9,7 @@
 /**
   Handling Knights in the game of chess.
  */
-class Knight : public Chesspiece, public Parent {
+class Knight : public Chesspiece{
 
 };
 

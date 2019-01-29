@@ -24,9 +24,13 @@ public :
     void undo();
 
 private:
-const Tile oldTile;
-const Tile newTile;
-const __int32 undoValue;
+
+    const Chesspiece *oldChesspiece;
+    const Chesspiece *newChesspiece;
+
+    const Tile oldTile;
+    const Tile newTile;
+    const __int8 undoValue; //TODO switch this to bool?
 };
 
 

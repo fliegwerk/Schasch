@@ -11,7 +11,7 @@
 /**
  *Handling Bishops in the game of chess.
  */
-class Bishop : public Chesspiece, public Parent, public Straightwalker{
+class Bishop : public Chesspiece, public Straightwalker{
 
 };
 
