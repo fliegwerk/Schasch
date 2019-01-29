@@ -5,17 +5,12 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
-#include "Model/Chessboard.hpp"
-#include "Model/Chessboard.cpp"
-#include "Model/Tile.hpp"
-#include "Model/Tile.cpp"
+#include "Controller/Game.hpp"
+#include "Controller/Game.cpp"
 
 int main() {
 
-    Chessboard chessboard;
-    for (int i = 0; i < 64; i++) {
-        std::cout << chessboard.getTile(i)->getName() << ((i+1) % 8 == 0 ? "\n" : " ");
-    }
-
+    Game game;
+    game.startNewGame();
     return 0;
 }

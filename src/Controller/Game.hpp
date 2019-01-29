@@ -9,7 +9,10 @@
  * Handles the setup and managing of a game of chess.
  */
 class Game {
-
+public:
+    Game();
+    ~Game();
+    void startNewGame();
 };
 
 

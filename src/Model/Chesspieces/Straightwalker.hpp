@@ -14,19 +14,15 @@
  */
 class Straightwalker {
 public:
-    virtual ~Straightwalker() {}
+    std::list <Tile> updatePossibleMoves(int xMod, int yMod, Tile* position);
 
-    virtual void OverrideMe() = 0;
+    std::list <Tile> updateNailedPieces(int xMod, int yMod, Tile* position, std::string color);
 
-    std::list<Tile> updatePossibleMoves(int xMod, int yMod, Tile *position);
-
-    std::list<Tile> updateNailedPieces(int xMod, int yMod, Tile* position, std::string color);
-
-    std::list<Tile> updateCoveredPieces(int xMod, int yMod, Tile* position, std::string color);
+    std::list <Tile> updateCoveredPieces(int xMod, int yMod, Tile* position, std::string color);
 
 private:
     //TODO check if this has to be Optional?
-    std::list<Tile> checkForIntermediatePieces(int xMod, int yMod, Tile position, std::string color);
+    std::list <Tile> checkForIntermediatePieces(int xMod, int yMod, Tile position, std::string color);
 };
 
 #endif //SCHASCH_STRAIGHTWALKER_HPP

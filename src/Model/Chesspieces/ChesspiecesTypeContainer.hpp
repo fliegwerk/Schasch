@@ -14,10 +14,10 @@ class ChesspiecesTypeContainer {
 public:
     ChesspiecesTypeContainer();
     ~ChesspiecesTypeContainer();
-    Chesspiece* getChesspieceOfType(Chesspieces typeOfChesspiece);
+    static Chesspiece* getChesspieceOfType(Chesspieces typeOfChesspiece);
 
 private:
-    Chesspiece* typeContainer [6];
+    static Chesspiece* typeContainer [6];
     void buildChesspieceTypeContainer();
 };
 

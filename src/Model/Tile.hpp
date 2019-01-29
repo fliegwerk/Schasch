@@ -32,13 +32,13 @@ public:
 
     const int getColumn() const;
 
-    const Chesspiece* getChesspiece() const;
+    Chesspiece* getChesspiece();
 private:
     const std::string name;
     const __int8 id;
     const __int8 row;
     const __int8 column;
-    const Chesspiece* chesspiece;
+    Chesspiece* chesspiece;
 
 };
 

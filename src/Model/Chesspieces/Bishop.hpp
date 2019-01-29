@@ -13,6 +13,8 @@
  */
 class Bishop : public Chesspiece, public Straightwalker{
 public:
+    Bishop();
+    ~Bishop();
     std::list<class Tile> updatePossibleMoves(bool forKing, Tile* position);
     std::list<class Tile> updateCoveredPieces();
     std::list<class Tile> updateNailedPieces();

@@ -12,6 +12,8 @@
  */
 class King : public Chesspiece {
 public:
+    King();
+    ~King();
     std::list<class Tile> updatePossibleMoves(bool forKing);
     std::list<class Tile> updateCoveredPieces();
     std::list<class Tile> updateNailedPieces();
