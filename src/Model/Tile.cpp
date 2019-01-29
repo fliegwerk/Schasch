@@ -4,28 +4,30 @@
 
 #include "Tile.hpp"
 
-Tile::Tile(std::string name, __int8 column, __int8 row) : name(name),
-                                                          row(row),
-                                                          column(column),
-                                                          id((8 * (row-1)) + column-1) {
+Tile::Tile(std::string name, __int8 column, __int8 row) : name(name), column(column), row(row), id((column-1)*8+row-1){
+
+}
+
+Tile::~Tile() {
+
 }
 
 const std::string Tile::getName() const {
-    return name;
+    return this->chesspiece->getName() ;
 }
 
 const int Tile::getId() const {
-    return id;
+    return this->id;
 }
 
 const int Tile::getRow() const {
-    return row;
-}
-
-const Chesspiece* Tile::getChesspiece() const {
-    return chesspiece;
+    return this->row;
 }
 
 const int Tile::getColumn() const {
-    return column;
+    return this->column;
+}
+
+Chesspiece* Tile::getChesspiece() {
+    return this->chesspiece;
 }
