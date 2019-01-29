@@ -8,6 +8,9 @@ Chessboard::Chessboard() { buildChessboard(); }
 
 Chessboard::~Chessboard() {}
 
+/**
+ * Creates the tiles that the chessboard is pointing to in the heap
+ */
 void Chessboard::buildChessboard() {
     for (int column = 0; column < 8; ++column) {
         for (int row = 0; row < 8; ++row) {

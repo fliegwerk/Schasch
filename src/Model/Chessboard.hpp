@@ -14,7 +14,6 @@
 class Chessboard {
 public:
     Chessboard();
-
     ~Chessboard();
 
     const Tile* getTile(int id) const;

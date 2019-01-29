@@ -2,35 +2,40 @@
 // Created by Janus on 29.01.19.
 //
 #include "Chesspiece.hpp"
+/**
+ * Creates a new instance of the hullclass.
+ * @param isWhite Wheter the created Chesspiece is white or black
+ * @param typeOfChesspiece A pointer to the class defining move behaviour
+ */
+Chesspiece::Chesspiece(const bool isWhite, Chesspiece* typeOfChesspiece)
+        :
+        typeOfChesspiece(typeOfChesspiece), isWhite(isWhite) {}
 
-Chesspiece::Chesspiece() {
 
-}
-
-void Chesspiece::setPosition(Tile* tile) {
+void Chesspiece::setTile(Tile* tile) {
     this->tile = tile;
 }
 
-std::list<class Tile> Chesspiece::updatePossibleMoves(bool forKing) {
-    return typeOfChesspiece->updatePossibleMoves(forKing);
+std::list <class Tile> Chesspiece::updatePossibleMoves(bool forKing, Tile* tile) {
+    return typeOfChesspiece->updatePossibleMoves(forKing, tile);
 }
 
-std::list<class Tile> Chesspiece::updateCoveredPieces() {
+std::list <class Tile> Chesspiece::updateCoveredPieces() {
     return typeOfChesspiece->updateCoveredPieces();
 }
 
-std::list<class Tile> Chesspiece::updateNailedPieces() {
+std::list <class Tile> Chesspiece::updateNailedPieces() {
     return typeOfChesspiece->updateNailedPieces();
 }
 
 std::string Chesspiece::getName() {
-    return name;
+    return typeOfChesspiece->getName();
 }
 
-std::string Chesspiece::getColor() {
-    return color;
+bool Chesspiece::getIsWhite() {
+    return isWhite;
 }
 
-Tile* Chesspiece::getTile() {
-    return this->tile;
+void Chesspiece::changeTypeOfChesspie(Chesspiece* typeOfChesspiece) {
+    this->typeOfChesspiece = typeOfChesspiece;
 }

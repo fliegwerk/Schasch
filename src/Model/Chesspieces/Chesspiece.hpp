@@ -9,28 +9,45 @@
 #include <List>
 
 /**
+ * Listing the Chesspieces in decreasing order sorted by value
+ */
+enum class Chesspieces{
+    King,Queen,Rook,Bishop,Knight,Pawn
+};
+/**
  * Hullclass used for every of the six Chesspieces.
  */
-
-class Chesspiece
-{
+class Chesspiece {
 public:
-    Chesspiece();
-    ~Chesspiece() {}
-   /* void setPosition(Tile* tile);
-    Tile* getTile();
+    Chesspiece(bool isWhite, Chesspiece* typeOfChesspiece);
 
-    */std::list<class Tile> updatePossibleMoves(bool forKing, Tile* position);
-    std::list<class Tile> updateCoveredPieces();
-    std::list<class Tile> updateNailedPieces();
+    Chesspiece(Chesspiece* typeOfChesspiece, const bool isWhite);
+
+    ~Chesspiece() {}
+
+    /* void setPosition(Tile* tile);
+     Tile* getTile();
+
+     */
+    std::list <class Tile> updatePossibleMoves(bool forKing, Tile* position);
+
+    std::list <class Tile> updateCoveredPieces();
+
+    std::list <class Tile> updateNailedPieces();
+
     std::string getName();
-    std::string getColor();
+
+    bool getIsWhite();
+
+    void changeTypeOfChesspie(Chesspiece* typeOfChesspiece);
+
+    void setTile(Tile* tile);
 
 private:
     Chesspiece* typeOfChesspiece;
     Tile* tile;
     std::string name;
-    std::string color;
+    const bool isWhite;
 };
 
 #endif //SCHASCH_CHESSPIECE_HPP

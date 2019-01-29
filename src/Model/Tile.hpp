@@ -11,6 +11,7 @@
 /**
  * Smallest entity of the board, where one board contains 8 by 8 Tiles.
  * Every game is played on a set of 64 Tiles.
+ * @param id Value from 0 through 63, incrementing along rows.
  */
 class Tile {
 public:
