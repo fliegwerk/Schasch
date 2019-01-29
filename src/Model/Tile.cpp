@@ -5,9 +5,9 @@
 #include "Tile.hpp"
 
 Tile::Tile(std::string name, __int8 column, __int8 row) : name(name),
-                                                            row(row),
-                                                            column(column),
-                                                            id(((8 * (row - 1)) + column - 1)) {
+                                                          row(row),
+                                                          column(column),
+                                                          id((8 * (row-1)) + column-1) {
 }
 
 const std::string Tile::getName() const {

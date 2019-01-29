@@ -13,7 +13,9 @@
 int main() {
 
     Chessboard chessboard;
-    std::cout<<chessboard.getTile(0)->getName()<<std::endl;
-    std::cin.in;
+    for (int i = 0; i < 64; i++) {
+        std::cout << chessboard.getTile(i)->getName() << ((i+1) % 8 == 0 ? "\n" : " ");
+    }
+
     return 0;
 }
