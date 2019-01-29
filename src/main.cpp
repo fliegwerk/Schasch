@@ -5,24 +5,15 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
+#include "Model/Chessboard.hpp"
+#include "Model/Chessboard.cpp"
+#include "Model/Tile.hpp"
+#include "Model/Tile.cpp"
+
 int main() {
-    sf::RenderWindow window(sf::VideoMode(400, 400), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
-
+    Chessboard chessboard;
+    std::cout<<chessboard.getTile(0)->getName()<<std::endl;
+    std::cin.in;
     return 0;
 }

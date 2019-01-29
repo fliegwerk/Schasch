@@ -25,8 +25,8 @@ public :
 
 private:
 
-    const Chesspiece *oldChesspiece;
-    const Chesspiece *newChesspiece;
+    const Chesspiece* oldChesspiece;
+    const Chesspiece* newChesspiece;
 
     const Tile oldTile;
     const Tile newTile;

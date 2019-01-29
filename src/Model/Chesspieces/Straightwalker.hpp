@@ -20,9 +20,9 @@ public:
 
     std::list<Tile> updatePossibleMoves(int xMod, int yMod, Tile *position);
 
-    std::list<Tile> updateNailedPieces(int xMod, int yMod, Tile position, std::string color);
+    std::list<Tile> updateNailedPieces(int xMod, int yMod, Tile* position, std::string color);
 
-    std::list<Tile> updateCoveredPieces(int xMod, int yMod, Tile position, std::string color);
+    std::list<Tile> updateCoveredPieces(int xMod, int yMod, Tile* position, std::string color);
 
 private:
     //TODO check if this has to be Optional?

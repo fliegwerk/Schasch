@@ -6,6 +6,7 @@
 #define SCHASCH_TILE_HPP
 
 #include <string>
+#include "Chesspieces/Chesspiece.hpp"
 
 /**
  * Smallest entity of the board, where one board contains 8 by 8 Tiles.
@@ -13,16 +14,30 @@
  */
 class Tile {
 public:
-    Tile(std::string name, __int32 row, __int32 column, __int32 posX, __int32 posY);
+    /**
+     * Creates a new tile for the chessboard.
+     * @param name Following the scheme of A-H for the Row and 1 through 8 for the column. Example: A8 [row:1,column:8]
+     * @param column Defining the y position, value from 1 through 8
+     * @param row Defining the x position, value from 1 through 8
+     */
+    Tile(std::string name, __int8 column, __int8 row);
     ~Tile();
 
+    const std::string getName() const;
+
+    const int getId() const;
+
+    const int getRow() const;
+
+    const int getColumn() const;
+
+    const Chesspiece* getChesspiece() const;
 private:
     const std::string name;
-    const __int32 id;
-    const __int32 row;
-    const __int32 column;
-    const __int32 posX;
-    const __int32 posY;
+    const __int8 id;
+    const __int8 row;
+    const __int8 column;
+    const Chesspiece* chesspiece;
 
 };
 
