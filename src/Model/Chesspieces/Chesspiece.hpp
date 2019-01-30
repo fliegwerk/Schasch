@@ -9,12 +9,6 @@
 #include <List>
 
 /**
- * Listing the Chesspieces in decreasing order sorted by value
- */
-enum class Chesspieces{
-    King,Queen,Rook,Bishop,Knight,Pawn
-};
-/**
  * Hullclass used for every of the six Chesspieces.
  */
 class Chesspiece {

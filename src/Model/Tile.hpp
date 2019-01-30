@@ -6,7 +6,7 @@
 #define SCHASCH_TILE_HPP
 
 #include <string>
-#include "Chesspieces/Chesspiece.hpp"
+class Chesspiece;
 
 /**
  * Smallest entity of the board, where one board contains 8 by 8 Tiles.
@@ -23,8 +23,6 @@ public:
      */
     Tile(std::string name, __int8 column, __int8 row);
     ~Tile();
-
-    const std::string getName() const;
 
     const int getId() const;
 

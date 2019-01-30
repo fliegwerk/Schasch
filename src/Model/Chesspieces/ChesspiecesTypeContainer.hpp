@@ -6,6 +6,7 @@
 #define SCHASCH_CHESSPIECESTYPECONTAINER_HPP
 
 #include "Chesspiece.hpp"
+#include "Chesspieces.hpp"
 
 /**
  * Managing the six types of Chesspieces used throughout the game.

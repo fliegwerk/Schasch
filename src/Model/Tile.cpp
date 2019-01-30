@@ -12,10 +12,6 @@ Tile::~Tile() {
 
 }
 
-const std::string Tile::getName() const {
-    return this->chesspiece->getName() ;
-}
-
 const int Tile::getId() const {
     return this->id;
 }
