@@ -13,14 +13,20 @@
     Every instance represents one move.
 */
 
-class Move : public Observable<Move> {
+class Move : public Observable <Move> {
 public :
     ~Move();
 
     Move(const Tile &oldTile, const Tile &newTile, const int undoValue);
 
+/**
+ * Used to actually change states of all used Classes (i.e. playing a move).
+ */
     void execute();
 
+/**
+* Used to undo the statechange of all used Classes.
+*/
     void undo();
 
 private:

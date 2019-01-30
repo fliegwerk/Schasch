@@ -4,19 +4,26 @@
 
 #include "Team.hpp"
 #include "Chesspieces/ChesspiecesTypeContainer.hpp"
-/**
- * @param isWhite True for creating a white team, false for a black one.
- */
+
 Team::Team(bool isWhite) : isWhite(isWhite) {
     createTeamPieces(isWhite);
+}
+
+std::list <class Chesspiece> Team::getChesspiecesOnBoard() {
+    return std::list <Chesspiece>();
+}
+
+std::list <class Chesspiece> Team::getChesspiecesOffBoard() {
+    return std::list <Chesspiece>();
 }
 
 Team::~Team() {
 }
 
 /**
- * Generates the Chesspieces of one color on the heap.
- */
+* Generates a set of 16 Chesspieces that is stored in the ChesspiecesOnBoard list.
+* @param isWhite Whether the color is white or black.
+*/
 void Team::createTeamPieces(bool isWhite) {
     teamPiecesOnBoard.push_front(
             new Chesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::King)));

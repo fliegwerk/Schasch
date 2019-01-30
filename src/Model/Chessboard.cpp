@@ -4,6 +4,9 @@
 
 #include "Chessboard.hpp"
 
+/**
+ * Instantiates a new Chessboard with a ready to play set of Tiles.
+ */
 Chessboard::Chessboard() { buildChessboard(); }
 
 Chessboard::~Chessboard() {}
@@ -21,6 +24,11 @@ void Chessboard::buildChessboard() {
     }
 }
 
+/**
+ * Handling requests for single Tiles of the Chessboard.
+ * @param id used to identify the requested Tile.
+ * @return a pointer to the specified Tile.
+ */
 const Tile* Chessboard::getTile(int id) const {
     //correction (+1) since columns and rows are values from 1 through 8
     return chessboard[(id / 8)][(id % 8)];

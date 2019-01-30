@@ -12,6 +12,9 @@ class Game {
 public:
     Game();
     ~Game();
+    /**
+     * Sets up a new game: Creates a new Chessboard, a ChesspiecesTypeContainer and two Teams.
+     */
     void startNewGame();
 };
 

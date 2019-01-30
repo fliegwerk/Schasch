@@ -12,13 +12,39 @@
  */
 class Team {
 public:
+    /**
+     * Instantiating a Team: all Chesspieces of the corresponding color will be created and listed in ChesspiecesOnBoard.
+     * @param isWhite Whether the color of the Team's Chesspieces is white or black.
+     */
     Team(bool isWhite);
+
     ~Team();
+
+    /**
+     * @return A list of all Chesspieces of one team that are not taken yet.
+     */
+    std::list <class Chesspiece> getChesspiecesOnBoard();
+
+/**
+ * @return A list of all Chesspieces of one team that got taken so far.
+ */
+    std::list <class Chesspiece> getChesspiecesOffBoard();
+
 private:
     const bool isWhite;
+
+
     void createTeamPieces(bool isWhite);
-    std::list<class Chesspiece*> teamPiecesOnBoard;
-    std::list<class Chesspiece*> teamPiecesOffBoard;
+
+    /**
+     * List containing all Chesspieces of one Team that are not taken yet.
+     */
+    std::list <class Chesspiece*> teamPiecesOnBoard;
+
+    /**
+     * List containg all Chesspieces of one Team that got taken.
+     */
+    std::list <class Chesspiece*> teamPiecesOffBoard;
 };
 
 

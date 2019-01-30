@@ -4,7 +4,9 @@
 
 #include "Tile.hpp"
 
-Tile::Tile(std::string name, __int8 column, __int8 row) : name(name), column(column), row(row), id((column-1)*8+row-1){
+Tile::Tile(std::string name, __int8 column, __int8 row)
+        :
+        name(name), column(column), row(row), id((column - 1) * 8 + row - 1) {
 
 }
 
@@ -26,4 +28,8 @@ const int Tile::getColumn() const {
 
 Chesspiece* Tile::getChesspiece() {
     return this->chesspiece;
+}
+
+void Tile::setChesspiece(Chesspiece* chesspiece) {
+    this->chesspiece = chesspiece;
 }

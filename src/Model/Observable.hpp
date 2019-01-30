@@ -20,10 +20,23 @@ private:
 public:
     Observable();
     ~Observable();
+
+    /**
+     * Adds a observer to the list of notified observers when an event happens.
+     * @param observer The object that's to be notfied.
+     */
     void registerObserver(Observer <T> observer);
 
+    /**
+     * Removes a observer from the list of notified observers.
+     * @param observer The object that's to be removed.
+     */
     void unregisterObserver(Observer <T> observer);
 
+    /**
+     * Used to notify every observer on the list of observers about an event.
+     * @param state The information about the event that's to be conveyed.
+     */
     void notifyAll(T state);
 };
 

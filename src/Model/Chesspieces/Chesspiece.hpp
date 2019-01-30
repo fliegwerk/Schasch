@@ -19,23 +19,21 @@ public:
 
     ~Chesspiece() {}
 
-    /* void setPosition(Tile* tile);
-     Tile* getTile();
-
-     */
-    std::list <class Tile> updatePossibleMoves(bool forKing, Tile* position);
+    std::list <class Tile> updatePossibleMoves(Tile* position, bool forKing);
 
     std::list <class Tile> updateCoveredPieces();
 
     std::list <class Tile> updateNailedPieces();
 
+    void changeTypeOfChesspiece(Chesspiece* typeOfChesspiece);
+
+    void setTile(Tile* tile);
+
+    Tile* getTile();
+
     std::string getName();
 
     bool getIsWhite();
-
-    void changeTypeOfChesspie(Chesspiece* typeOfChesspiece);
-
-    void setTile(Tile* tile);
 
 private:
     Chesspiece* typeOfChesspiece;

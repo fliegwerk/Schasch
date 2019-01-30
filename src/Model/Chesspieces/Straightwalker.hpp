@@ -10,7 +10,7 @@
 #include <string>
 
 /**
- * Additional interface of the three chesspieces Queen, Rook and Bishop.
+ * Additional interface for the three Chesspieces Queen, Rook and Bishop.
  */
 class Straightwalker {
 public:

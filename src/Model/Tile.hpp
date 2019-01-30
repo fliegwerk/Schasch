@@ -31,6 +31,8 @@ public:
     const int getColumn() const;
 
     Chesspiece* getChesspiece();
+
+    void setChesspiece(Chesspiece* chesspiece);
 private:
     const std::string name;
     const __int8 id;

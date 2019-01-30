@@ -12,6 +12,10 @@
 template<class T>
 class Observer {
 public:
+    /**
+     * Called whenever the observable broadcasts an event.
+     * @param state The information about the actual event.
+     */
     virtual void notify(T state) = 0;
 };
 
