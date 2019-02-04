@@ -7,7 +7,7 @@
 
 #include "../Tile.hpp"
 #include <List>
-
+#include <optional>
 /**
  * Hullclass used for every of the six Chesspieces.
  */
@@ -15,15 +15,13 @@ class Chesspiece {
 public:
     Chesspiece(bool isWhite, Chesspiece* typeOfChesspiece);
 
-    Chesspiece(Chesspiece* typeOfChesspiece, const bool isWhite);
-
     ~Chesspiece() {}
 
     std::list <class Tile> updatePossibleMoves(Tile* position, bool forKing);
 
     std::list <class Tile> updateCoveredPieces();
 
-    std::list <class Tile> updateNailedPieces();
+    std::optional <Tile*> updateNailedPieces();
 
     void changeTypeOfChesspiece(Chesspiece* typeOfChesspiece);
 

@@ -6,16 +6,21 @@
 #define SCHASCH_KNIGHT_HPP
 
 #include "Chesspiece.hpp"
+
 /**
   Handling Knights in the game of chess.
  */
-class Knight : public Chesspiece{
+class Knight : public Chesspiece {
 public:
     Knight();
+
     ~Knight();
-    std::list<class Tile> updatePossibleMoves(bool forKing);
-    std::list<class Tile> updateCoveredPieces();
-    std::list<class Tile> updateNailedPieces();
+
+    std::list <class Tile> updatePossibleMoves(bool forKing);
+
+    std::list <class Tile> updateCoveredPieces();
+
+    std::optional <Tile*> updateNailedPieces(Tile* position, std::string color);
 };
 
 

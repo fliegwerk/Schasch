@@ -17,11 +17,11 @@ public:
     ~Bishop();
     std::list<class Tile> updatePossibleMoves(bool forKing, Tile* position);
     std::list<class Tile> updateCoveredPieces();
-    std::list<class Tile> updateNailedPieces();
+    std::optional<Tile*> updateNailedPieces(Tile* position, std::string color);
 
 private:
-    int directionSwitchXMod(__int8 direction);
-    int directionSwitchYMod(__int8 direction);
+    __int8 directionSwitchXMod(__int8 direction);
+    __int8 directionSwitchYMod(__int8 direction);
 };
 
 

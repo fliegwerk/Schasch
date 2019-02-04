@@ -3,3 +3,7 @@
 //
 
 #include "Knight.hpp"
+
+std::optional <Tile*> Knight::updateNailedPieces(Tile* position, std::string color) {
+    return {};
+}

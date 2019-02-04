@@ -3,3 +3,7 @@
 //
 
 #include "Pawn.hpp"
+
+std::optional <Tile*> Pawn::updateNailedPieces(Tile* position, std::string color) {
+    return {};
+}

@@ -13,11 +13,6 @@
  */
 class Game {
 public:
-    // con- and destructor probably not needed?
-    Game();
-
-    ~Game();
-
     static RunningGame* startNewGame();
 
     static RunningGame* loadGame(std::string name);

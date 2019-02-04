@@ -10,9 +10,6 @@
 #include "RunningGame.hpp"
 #include "../View/IView.hpp"
 
-Game::Game() = default;
-
-Game::~Game() = default;
 
 /**
  * Sets up a new game.

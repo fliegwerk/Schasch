@@ -16,7 +16,8 @@ public:
     ~Pawn();
     std::list<class Tile> updatePossibleMoves(bool forKing);
     std::list<class Tile> updateCoveredPieces();
-    std::list<class Tile> updateNailedPieces();
+
+    std::optional<Tile*> updateNailedPieces(Tile* position, std::string color);
 };
 
 

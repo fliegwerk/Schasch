@@ -3,3 +3,7 @@
 //
 
 #include "King.hpp"
+
+std::optional <Tile*> King::updateNailedPieces(Tile* position, std::string color) {
+    return {};
+}
