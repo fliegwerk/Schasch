@@ -13,10 +13,17 @@
  */
 class Game {
 public:
+    // con- and destructor probably not needed?
     Game();
+
     ~Game();
 
-    RunningGame* startNewGame();
+    static RunningGame* startNewGame();
+
+    static RunningGame* loadGame(std::string name);
+
+private:
+    static std::map <std::string, RunningGame*> gamesList;
 };
 
 

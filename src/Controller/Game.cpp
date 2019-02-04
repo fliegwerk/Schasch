@@ -8,6 +8,7 @@
 #include "../Model/Chessboard.hpp"
 #include "../Model/Team.hpp"
 #include "RunningGame.hpp"
+#include "../View/IView.hpp"
 
 Game::Game() = default;
 
@@ -23,5 +24,18 @@ RunningGame* Game::startNewGame() {
     auto black = new Team(false);
     auto white = new Team(true);
     auto moveHistory = new MoveHistory();
-    return new RunningGame(chesspiecesTypeContainer, chessboard, white, black, moveHistory);
+    auto name = IView::getGameNameFromPlayer();
+    RunningGame* newGame = new RunningGame(chesspiecesTypeContainer, chessboard, white, black, moveHistory, name);
+    gamesList[name] = newGame;
+    return newGame;
+
+}
+
+/**
+ * Used to retrieve an ongoing game.
+ * @param name String that identifies the game, set upon starting it.
+ * @return A pointer to the specified game.
+ */
+RunningGame* Game::loadGame(std::string name) {
+    return gamesList.at(name);
 }

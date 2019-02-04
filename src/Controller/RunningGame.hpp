@@ -15,16 +15,19 @@
  */
 class RunningGame {
 public:
-    RunningGame(ChesspiecesTypeContainer* chesspiecesTypeContainer, Chessboard* chessboard, Team* white, Team* black, MoveHistory* moveHistory);
+    RunningGame(ChesspiecesTypeContainer* chesspiecesTypeContainer, Chessboard* chessboard, Team* white, Team* black, MoveHistory* moveHistory, std::string name);
     ~RunningGame();
     bool checkMove();
 
+    const std::string getName() const;
+
 private:
-    MoveHistory* moveHistory;
-    ChesspiecesTypeContainer* chesspiecesTypeContainer;
-    Chessboard* chessboard;
-    Team* white;
-    Team* black;
+    const std::string name;
+    const MoveHistory* moveHistory;
+    const ChesspiecesTypeContainer* chesspiecesTypeContainer;
+    const Chessboard* chessboard;
+    const Team* white;
+    const Team* black;
 };
 
 
