@@ -12,6 +12,8 @@
 */
 class Pawn : public AbstractChesspiece {
 public:
+    Pawn() = default;
+
     ~Pawn() override;
 
     std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;

@@ -4,13 +4,12 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
+#include "Model/Chesspieces/ChesspiecesTypeContainer.hpp"
 
-#include "Controller/Game.hpp"
-#include "Controller/Game.cpp"
 
 int main() {
 
-    Game game;
+    ChesspiecesTypeContainer ctp;
 
     return 0;
 }

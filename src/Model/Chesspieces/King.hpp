@@ -7,11 +7,14 @@
 
 
 #include "AbstractChesspiece.hpp"
+
 /**
  *Handling Kings in the game of chess.
  */
 class King : public AbstractChesspiece {
 public:
+    King() = default;
+
     ~King() override;
 
     std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;

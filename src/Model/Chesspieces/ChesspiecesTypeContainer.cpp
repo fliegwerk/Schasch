@@ -15,9 +15,6 @@ ChesspiecesTypeContainer::ChesspiecesTypeContainer() {
     buildChesspieceTypeContainer();
 }
 
-ChesspiecesTypeContainer::~ChesspiecesTypeContainer() {
-
-}
 
 /**
  * @param typeOfChesspiece The different types of Chesspieces like defined in the enum Chesspieces in Chesspiece.hpp

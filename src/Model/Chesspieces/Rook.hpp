@@ -13,8 +13,9 @@
  */
 class Rook : public AbstractChesspiece, public Straightwalker {
 public:
-    Rook();
-    ~Rook();
+    Rook() = default;
+
+    ~Rook() = default;
 
     std::optional <Tile*> updateNailedPieces(Tile* position);
 

@@ -12,6 +12,8 @@
  */
 class Knight : public AbstractChesspiece {
 public:
+    Knight() = default;
+
     ~Knight() override;
 
     std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;

@@ -14,7 +14,7 @@ class PlayableChesspiece {
 public:
     PlayableChesspiece(bool isWhite, AbstractChesspiece* typeOfChesspiece);
 
-    ~PlayableChesspiece();
+    ~PlayableChesspiece() = default;
 
     std::list <class Tile> updatePossibleMoves(bool forKing);
 
