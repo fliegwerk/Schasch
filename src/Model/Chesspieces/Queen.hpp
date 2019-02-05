@@ -5,23 +5,23 @@
 #ifndef SCHASCH_QUEEN_HPP
 #define SCHASCH_QUEEN_HPP
 
-#include "Chesspiece.hpp"
+#include "AbstractChesspiece.hpp"
 #include "Straightwalker.hpp"
 
 /**
  *Handling Queens in the game of chess.
  */
-class Queen : public Chesspiece, public Straightwalker {
+class Queen : public AbstractChesspiece, public Straightwalker {
 public:
-    Queen();
+    ~Queen() override;
 
-    ~Queen();
+    std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
 
-    std::list <class Tile> updatePossibleMoves(bool forKing);
+    std::list <Tile> updateCoveredPieces(Tile* position) override;
 
-    std::list <class Tile> updateCoveredPieces();
+    std::optional <Tile*> updateNailedPieces(Tile* position) override;
 
-    std::optional <Tile*> updateNailedPieces(Tile* position, std::string color);
+    std::string getName() override;
 
 private:
     __int8 directionSwitchXMod(__int8 direction) override;

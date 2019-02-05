@@ -23,12 +23,12 @@ public:
     /**
      * @return A list of all Chesspieces of one team that are not taken yet.
      */
-    std::list <class Chesspiece> getChesspiecesOnBoard();
+    std::list <class PlayableChesspiece> getChesspiecesOnBoard();
 
 /**
  * @return A list of all Chesspieces of one team that got taken so far.
  */
-    std::list <class Chesspiece> getChesspiecesOffBoard();
+    std::list <class PlayableChesspiece> getChesspiecesOffBoard();
 
 private:
     const bool isWhite;
@@ -39,12 +39,12 @@ private:
     /**
      * List containing all Chesspieces of one Team that are not taken yet.
      */
-    std::list <class Chesspiece*> teamPiecesOnBoard;
+    std::list <class PlayableChesspiece*> teamPiecesOnBoard;
 
     /**
      * List containg all Chesspieces of one Team that got taken.
      */
-    std::list <class Chesspiece*> teamPiecesOffBoard;
+    std::list <class PlayableChesspiece*> teamPiecesOffBoard;
 };
 
 

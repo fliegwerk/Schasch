@@ -9,12 +9,12 @@ Team::Team(bool isWhite) : isWhite(isWhite) {
     createTeamPieces(isWhite);
 }
 
-std::list <class Chesspiece> Team::getChesspiecesOnBoard() {
-    return std::list <Chesspiece>();
+std::list <class PlayableChesspiece> Team::getChesspiecesOnBoard() {
+    return std::list <PlayableChesspiece>();
 }
 
-std::list <class Chesspiece> Team::getChesspiecesOffBoard() {
-    return std::list <Chesspiece>();
+std::list <class PlayableChesspiece> Team::getChesspiecesOffBoard() {
+    return std::list <PlayableChesspiece>();
 }
 
 Team::~Team() {
@@ -26,17 +26,17 @@ Team::~Team() {
 */
 void Team::createTeamPieces(bool isWhite) {
     teamPiecesOnBoard.push_front(
-            new Chesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::King)));
+            new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::King)));
     teamPiecesOnBoard.push_front(
-            new Chesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Queen)));
+            new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Queen)));
     teamPiecesOnBoard.push_front(
-            new Chesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Rook)));
+            new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Rook)));
     teamPiecesOnBoard.push_front(
-            new Chesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Bishop)));
+            new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Bishop)));
     teamPiecesOnBoard.push_front(
-            new Chesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Knight)));
+            new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Knight)));
     for (int i = 0; i < 8; ++i) {
-        Chesspiece* chesspiece = new Chesspiece(isWhite,
+        PlayableChesspiece* chesspiece = new PlayableChesspiece(isWhite,
                                                 ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Pawn));
         teamPiecesOnBoard.push_front(chesspiece);
     }

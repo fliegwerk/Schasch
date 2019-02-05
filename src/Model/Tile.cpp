@@ -26,10 +26,10 @@ const int Tile::getColumn() const {
     return this->column;
 }
 
-Chesspiece* Tile::getChesspiece() {
+AbstractChesspiece* Tile::getChesspiece() {
     return this->chesspiece;
 }
 
-void Tile::setChesspiece(Chesspiece* chesspiece) {
+void Tile::setChesspiece(AbstractChesspiece* chesspiece) {
     this->chesspiece = chesspiece;
 }

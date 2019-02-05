@@ -4,9 +4,10 @@
 
 #include "Queen.hpp"
 
-std::optional <Tile*> Queen::updateNailedPieces(Tile* position, std::string color) {
+std::optional <Tile*> Queen::updateNailedPieces(Tile* position) {
     for (__int8 i = 0; i < 8; i++) {
-        std::optional<Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),directionSwitchXMod(i),position, color);
+        std::optional <Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
+                                                                               directionSwitchXMod(i), position);
         if (nailedPiece.has_value())
             return nailedPiece;
     }
@@ -48,4 +49,20 @@ __int8 Queen::directionSwitchYMod(__int8 direction) {
             return -1;
     }
     return 0;
+}
+
+Queen::~Queen() {
+
+}
+
+std::list <Tile> Queen::updatePossibleMoves(Tile* position, bool forKing) {
+    return std::list <Tile>();
+}
+
+std::list <Tile> Queen::updateCoveredPieces(Tile* position) {
+    return std::list <Tile>();
+}
+
+std::string Queen::getName() {
+    return std::__cxx11::string();
 }

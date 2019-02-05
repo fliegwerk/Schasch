@@ -4,6 +4,24 @@
 
 #include "Pawn.hpp"
 
-std::optional <Tile*> Pawn::updateNailedPieces(Tile* position, std::string color) {
+
+Pawn::~Pawn() {
+
+}
+
+std::list <Tile> Pawn::updatePossibleMoves(Tile* position, bool forKing) {
+    return std::list <Tile>();
+}
+
+std::list <Tile> Pawn::updateCoveredPieces(Tile* position) {
+    return std::list <Tile>();
+}
+
+//Pawn can't nail Pieces
+std::optional <Tile*> Pawn::updateNailedPieces(Tile* position) {
     return {};
+}
+
+std::string Pawn::getName() {
+    return std::__cxx11::string();
 }

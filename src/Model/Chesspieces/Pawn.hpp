@@ -5,19 +5,22 @@
 #ifndef SCHASCH_PAWN_HPP
 #define SCHASCH_PAWN_HPP
 
-#include "Chesspiece.hpp"
+#include "AbstractChesspiece.hpp"
 
 /**
 *Handling Pawns in the game of chess.
 */
-class Pawn : public Chesspiece{
+class Pawn : public AbstractChesspiece {
 public:
-    Pawn();
-    ~Pawn();
-    std::list<class Tile> updatePossibleMoves(bool forKing);
-    std::list<class Tile> updateCoveredPieces();
+    ~Pawn() override;
 
-    std::optional<Tile*> updateNailedPieces(Tile* position, std::string color);
+    std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+
+    std::list <Tile> updateCoveredPieces(Tile* position) override;
+
+    std::optional <Tile*> updateNailedPieces(Tile* position) override;
+
+    std::string getName() override;
 };
 
 

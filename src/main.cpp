@@ -11,6 +11,6 @@
 int main() {
 
     Game game;
-    game.startNewGame();
+
     return 0;
 }

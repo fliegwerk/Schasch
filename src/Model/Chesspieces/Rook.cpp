@@ -4,9 +4,10 @@
 
 #include "Rook.hpp"
 
-std::optional <Tile*> Rook::updateNailedPieces(Tile* position, std::string color) {
+std::optional <Tile*> Rook::updateNailedPieces(Tile* position) {
     for (__int8 i = 0; i < 4; i++) {
-        std::optional<Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),directionSwitchXMod(i),position, color);
+        std::optional <Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
+                                                                               directionSwitchXMod(i), position);
         if (nailedPiece.has_value())
             return nailedPiece;
     }
@@ -40,3 +41,21 @@ __int8 Rook::directionSwitchYMod(__int8 direction) {
     }
     return 0;
 }
+
+Rook::Rook() {
+
+}
+
+std::list <Tile> Rook::updatePossibleMoves(Tile* position, bool forKing) {
+    return std::list <Tile>();
+}
+
+std::list <Tile> Rook::updateCoveredPieces(Tile* position) {
+    return std::list <Tile>();
+}
+
+std::string Rook::getName() {
+    return std::__cxx11::string();
+}
+
+Rook::~Rook() = default;

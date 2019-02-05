@@ -5,7 +5,7 @@
 #ifndef SCHASCH_CHESSPIECESTYPECONTAINER_HPP
 #define SCHASCH_CHESSPIECESTYPECONTAINER_HPP
 
-#include "Chesspiece.hpp"
+#include "AbstractChesspiece.hpp"
 #include "Chesspieces.hpp"
 
 /**
@@ -15,10 +15,10 @@ class ChesspiecesTypeContainer {
 public:
     ChesspiecesTypeContainer();
     ~ChesspiecesTypeContainer();
-    static Chesspiece* getChesspieceOfType(Chesspieces typeOfChesspiece);
+    static AbstractChesspiece* getChesspieceOfType(Chesspieces typeOfChesspiece);
 
 private:
-    static Chesspiece* typeContainer [6];
+    static AbstractChesspiece* typeContainer [6];
     void buildChesspieceTypeContainer();
 };
 

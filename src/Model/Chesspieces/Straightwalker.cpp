@@ -38,15 +38,3 @@ std::list<Tile> Straightwalker::updatePossibleMoves(int xMod, int yMod, Tile *po
 
     return possibleMoves;
 }
-
-std::list<Tile> Straightwalker::updateNailedPieces(int xMod, int yMod, Tile *position, std::string color) {
-    return std::list<Tile>();
-}
-
-std::list<Tile> Straightwalker::updateCoveredPieces(int xMod, int yMod, Tile *position, std::string color) {
-    return std::list<Tile>();
-}
-
-std::list<Tile> Straightwalker::checkForIntermediatePieces(int xMod, int yMod, Tile position, std::string color) {
-    return std::list<Tile>();
-}

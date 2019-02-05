@@ -6,18 +6,21 @@
 #define SCHASCH_KING_HPP
 
 
-#include "Chesspiece.hpp"
+#include "AbstractChesspiece.hpp"
 /**
  *Handling Kings in the game of chess.
  */
-class King : public Chesspiece {
+class King : public AbstractChesspiece {
 public:
-    King();
-    ~King();
-    std::list<class Tile> updatePossibleMoves(bool forKing);
-    std::list<class Tile> updateCoveredPieces();
+    ~King() override;
 
-    std::optional<Tile*> updateNailedPieces(Tile* position, std::string color);
+    std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+
+    std::list <Tile> updateCoveredPieces(Tile* position) override;
+
+    std::optional <Tile*> updateNailedPieces(Tile* position) override;
+
+    std::string getName() override;
 
 };
 

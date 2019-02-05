@@ -4,6 +4,23 @@
 
 #include "King.hpp"
 
-std::optional <Tile*> King::updateNailedPieces(Tile* position, std::string color) {
+King::~King() {
+
+}
+
+std::list <Tile> King::updatePossibleMoves(Tile* position, bool forKing) {
+    return std::list <Tile>();
+}
+
+std::list <Tile> King::updateCoveredPieces(Tile* position) {
+    return std::list <Tile>();
+}
+
+//King can't nail Pieces
+std::optional <Tile*> King::updateNailedPieces(Tile* position) {
     return {};
+}
+
+std::string King::getName() {
+    return std::__cxx11::string();
 }

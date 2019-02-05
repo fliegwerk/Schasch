@@ -16,8 +16,8 @@
  * @return A pointer to the newly started game.
  */
 RunningGame* Game::startNewGame() {
-    auto chesspiecesTypeContainer = new(ChesspiecesTypeContainer);
-    auto chessboard = new (Chessboard);
+    auto chesspiecesTypeContainer = new ChesspiecesTypeContainer();
+    auto chessboard = new Chessboard();
     auto black = new Team(false);
     auto white = new Team(true);
     auto moveHistory = new MoveHistory();

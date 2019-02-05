@@ -18,10 +18,10 @@ std::list <class Tile> Bishop::updateCoveredPieces() {
 
 }
 
-std::optional <Tile*> Bishop::updateNailedPieces(Tile* position, std::string color) {
+std::optional <Tile*> Bishop::updateNailedPieces(Tile* position) {
     for (__int8 i = 0; i < 4; i++) {
         std::optional <Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
-                                                                               directionSwitchXMod(i), position, color);
+                                                                               directionSwitchXMod(i), position);
         if (nailedPiece.has_value())
             return nailedPiece;
     }
@@ -53,4 +53,20 @@ __int8 Bishop::directionSwitchYMod(__int8 direction) {
         default:
             return 0;
     }
+}
+
+std::list <Tile> Bishop::updatePossibleMoves(Tile* position, bool forKing) {
+
+}
+
+std::list <Tile> Bishop::updateCoveredPieces(Tile* position) {
+    return std::list <Tile>();
+}
+
+std::optional <Tile*> Bishop::updateNailedPieces(Tile* position) {
+    return std::optional <Tile*>();
+}
+
+std::string Bishop::getName() {
+    return std::__cxx11::string();
 }

@@ -5,16 +5,24 @@
 #ifndef SCHASCH_ROOK_HPP
 #define SCHASCH_ROOK_HPP
 
-#include "Chesspiece.hpp"
+#include "AbstractChesspiece.hpp"
 #include "Straightwalker.hpp"
 
 /**
  *Handling Rooks in the game of chess.
  */
-class Rook : public Chesspiece, public Straightwalker {
+class Rook : public AbstractChesspiece, public Straightwalker {
 public:
+    Rook();
+    ~Rook();
 
-    std::optional <Tile*> updateNailedPieces(Tile* position, std::string color);
+    std::optional <Tile*> updateNailedPieces(Tile* position);
+
+    std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+
+    std::list <Tile> updateCoveredPieces(Tile* position) override;
+
+    std::string getName() override;
 
 private:
     __int8 directionSwitchXMod(__int8 direction) override;

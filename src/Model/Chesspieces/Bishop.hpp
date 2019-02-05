@@ -5,22 +5,30 @@
 #ifndef SCHASCH_BISHOP_HPP
 #define SCHASCH_BISHOP_HPP
 
-#include "Chesspiece.hpp"
+#include "AbstractChesspiece.hpp"
 #include "Straightwalker.hpp"
 
 /**
  *Handling Bishops in the game of chess.
  */
-class Bishop : public Chesspiece, public Straightwalker{
+class Bishop : public AbstractChesspiece, public Straightwalker {
+
 public:
-    Bishop();
-    ~Bishop();
-    std::list<class Tile> updatePossibleMoves(bool forKing, Tile* position);
-    std::list<class Tile> updateCoveredPieces();
-    std::optional<Tile*> updateNailedPieces(Tile* position, std::string color);
+    Bishop() = default;
+
+    ~Bishop() = default;
+
+    std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+
+    std::list <Tile> updateCoveredPieces(Tile* position) override;
+
+    std::optional <Tile*> updateNailedPieces(Tile* position) override;
+
+    std::string getName() override;
 
 private:
     __int8 directionSwitchXMod(__int8 direction);
+
     __int8 directionSwitchYMod(__int8 direction);
 };
 

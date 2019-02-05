@@ -5,22 +5,22 @@
 #ifndef SCHASCH_KNIGHT_HPP
 #define SCHASCH_KNIGHT_HPP
 
-#include "Chesspiece.hpp"
+#include "AbstractChesspiece.hpp"
 
 /**
   Handling Knights in the game of chess.
  */
-class Knight : public Chesspiece {
+class Knight : public AbstractChesspiece {
 public:
-    Knight();
+    ~Knight() override;
 
-    ~Knight();
+    std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
 
-    std::list <class Tile> updatePossibleMoves(bool forKing);
+    std::list <Tile> updateCoveredPieces(Tile* position) override;
 
-    std::list <class Tile> updateCoveredPieces();
+    std::optional <Tile*> updateNailedPieces(Tile* position) override;
 
-    std::optional <Tile*> updateNailedPieces(Tile* position, std::string color);
+    std::string getName() override;
 };
 
 

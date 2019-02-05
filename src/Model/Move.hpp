@@ -6,7 +6,7 @@
 #define SCHASCH_MOVE_HPP
 
 #include "Observable.hpp"
-#include "Chesspieces/Chesspiece.hpp"
+#include "Chesspieces/AbstractChesspiece.hpp"
 #include "Tile.hpp"
 
 /** Handles the execution or undo of a chess move.
@@ -31,8 +31,8 @@ public :
 
 private:
 
-    const Chesspiece* oldChesspiece;
-    const Chesspiece* newChesspiece;
+    const AbstractChesspiece* oldChesspiece;
+    const AbstractChesspiece* newChesspiece;
 
     const Tile oldTile;
     const Tile newTile;

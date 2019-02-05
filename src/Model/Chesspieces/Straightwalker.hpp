@@ -15,15 +15,19 @@
  */
 class Straightwalker {
 public:
+    Straightwalker() = default;
+
+    ~Straightwalker() = default;
+
     std::list <Tile> updatePossibleMoves(int xMod, int yMod, Tile* position);
 
-    std::optional <Tile*> updateNailedPieces(int xMod, int yMod, Tile* position, std::string color);
+    std::optional <Tile*> updateNailedPieces(int xMod, int yMod, Tile* position);
 
-    std::list <Tile> updateCoveredPieces(int xMod, int yMod, Tile* position, std::string color);
+    std::list <Tile> updateCoveredPieces(int xMod, int yMod, Tile* position);
 
 private:
     //TODO check if this has to be Optional?
-    std::list <Tile> checkForIntermediatePieces(int xMod, int yMod, Tile position, std::string color);
+    std::list <Tile> checkForIntermediatePieces(int xMod, int yMod, Tile position, bool isWhite);
 
     virtual __int8 directionSwitchXMod(__int8 direction) = 0;
 
