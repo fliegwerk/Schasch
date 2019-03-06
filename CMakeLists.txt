@@ -54,3 +54,7 @@ if(APPLE)
     # custom Apple CMake goes here
 endif(APPLE)
 ## -- // --
+
+## === COPY RESOURCE FILES TO WORKING DIRECTORY ===
+file(COPY res DESTINATION ${CMAKE_BINARY_DIR})
+## -- // --
