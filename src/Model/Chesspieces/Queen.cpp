@@ -5,7 +5,7 @@
 #include "Queen.hpp"
 
 std::optional <Tile*> Queen::updateNailedPieces(Tile* position) {
-    for (__int8 i = 0; i < 8; i++) {
+    for (__int8_t i = 0; i < 8; i++) {
         std::optional <Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
                                                                                directionSwitchXMod(i), position);
         if (nailedPiece.has_value())
@@ -17,7 +17,7 @@ std::optional <Tile*> Queen::updateNailedPieces(Tile* position) {
 
 //straight:     0 up; 1 right; 2 down; 3 left;
 //diagonal:     4 left&up; 5 right&up; 6left&down; 7right&down
-__int8 Queen::directionSwitchXMod(__int8 direction) {
+__int8_t Queen::directionSwitchXMod(__int8_t direction) {
     switch (direction) {
         case 0:
         case 2:
@@ -34,7 +34,7 @@ __int8 Queen::directionSwitchXMod(__int8 direction) {
     return 0;
 }
 
-__int8 Queen::directionSwitchYMod(__int8 direction) {
+__int8_t Queen::directionSwitchYMod(__int8_t direction) {
     switch (direction) {
         case 1:
         case 3:

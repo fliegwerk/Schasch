@@ -5,7 +5,7 @@
 #include "Rook.hpp"
 
 std::optional <Tile*> Rook::updateNailedPieces(Tile* position) {
-    for (__int8 i = 0; i < 4; i++) {
+    for (__int8_t i = 0; i < 4; i++) {
         std::optional <Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
                                                                                directionSwitchXMod(i), position);
         if (nailedPiece.has_value())
@@ -16,7 +16,7 @@ std::optional <Tile*> Rook::updateNailedPieces(Tile* position) {
 
 
 //straight:     0 up; 1 right, 2 down, 3 left
-__int8 Rook::directionSwitchXMod(__int8 direction) {
+__int8_t Rook::directionSwitchXMod(__int8_t direction) {
     switch (direction) {
         case 0:
         case 2:
@@ -29,7 +29,7 @@ __int8 Rook::directionSwitchXMod(__int8 direction) {
     return 0;
 }
 
-__int8 Rook::directionSwitchYMod(__int8 direction) {
+__int8_t Rook::directionSwitchYMod(__int8_t direction) {
     switch (direction) {
         case 1:
         case 3:

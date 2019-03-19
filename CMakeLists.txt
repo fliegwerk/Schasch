@@ -32,7 +32,7 @@ find_package(SFML 2.5 COMPONENTS system window graphics audio network REQUIRED)
 
 ## === Set SOURCE/HEADER variables ===
 set(SOURCE_FILES src/main.cpp   )
-set(HEADER_FILES                )
+set(HEADER_FILES )
 
 
 ## === GENERATING EXECUTABLES ===

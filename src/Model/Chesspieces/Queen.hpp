@@ -26,9 +26,9 @@ public:
     std::string getName() override;
 
 private:
-    __int8 directionSwitchXMod(__int8 direction) override;
+    __int8_t directionSwitchXMod(__int8_t direction) override;
 
-    __int8 directionSwitchYMod(__int8 direction) override;
+    __int8_t directionSwitchYMod(__int8_t direction) override;
 };
 
 

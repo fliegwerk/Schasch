@@ -7,7 +7,7 @@
 //ignore forKing since the Bishop attacks the same Tiles it is able to move to
 std::list <class Tile> Bishop::updatePossibleMoves(bool forKing, Tile* position) {
     std::list <Tile> possibleMoves;
-    for (__int8 i = 0; i < 4; i++) {
+    for (__int8_t i = 0; i < 4; i++) {
         possibleMoves.merge(
                 Straightwalker::updatePossibleMoves(directionSwitchXMod(i), directionSwitchYMod(i), position));
     }
@@ -19,7 +19,7 @@ std::list <class Tile> Bishop::updateCoveredPieces() {
 }
 
 std::optional <Tile*> Bishop::updateNailedPieces(Tile* position) {
-    for (__int8 i = 0; i < 4; i++) {
+    for (__int8_t i = 0; i < 4; i++) {
         std::optional <Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
                                                                                directionSwitchXMod(i), position);
         if (nailedPiece.has_value())
@@ -29,7 +29,7 @@ std::optional <Tile*> Bishop::updateNailedPieces(Tile* position) {
 }
 
 //diagonal:     0 left&up; 1 right&up; 2 left&down; 3 right&down
-__int8 Bishop::directionSwitchXMod(__int8 direction) {
+__int8_t Bishop::directionSwitchXMod(__int8_t direction) {
     switch (direction) {
         case 0:
         case 2:
@@ -42,7 +42,7 @@ __int8 Bishop::directionSwitchXMod(__int8 direction) {
     }
 }
 
-__int8 Bishop::directionSwitchYMod(__int8 direction) {
+__int8_t Bishop::directionSwitchYMod(__int8_t direction) {
     switch (direction) {
         case 0:
         case 1:

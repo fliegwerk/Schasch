@@ -21,7 +21,7 @@ public:
      * @param column Defining the y position, value from 1 through 8
      * @param row Defining the x position, value from 1 through 8
      */
-    Tile(std::string name, __int8 column, __int8 row);
+    Tile(std::string name, __int8_t column, __int8_t row);
     ~Tile();
 
     const int getId() const;
@@ -35,9 +35,9 @@ public:
     void setChesspiece(AbstractChesspiece* chesspiece);
 private:
     const std::string name;
-    const __int8 id;
-    const __int8 row;
-    const __int8 column;
+    const __int8_t id;
+    const __int8_t row;
+    const __int8_t column;
     AbstractChesspiece* chesspiece;
 
 };

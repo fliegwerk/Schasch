@@ -29,9 +29,9 @@ private:
     //TODO check if this has to be Optional?
     std::list <Tile> checkForIntermediatePieces(int xMod, int yMod, Tile position, bool isWhite);
 
-    virtual __int8 directionSwitchXMod(__int8 direction) = 0;
+    virtual __int8_t directionSwitchXMod(__int8_t direction) = 0;
 
-    virtual __int8 directionSwitchYMod(__int8 direction) = 0;
+    virtual __int8_t directionSwitchYMod(__int8_t direction) = 0;
 };
 
 #endif //SCHASCH_STRAIGHTWALKER_HPP

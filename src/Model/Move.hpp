@@ -36,7 +36,7 @@ private:
 
     const Tile oldTile;
     const Tile newTile;
-    const __int8 undoValue; //TODO switch this to bool?
+    const __int8_t undoValue; //TODO switch this to bool?
 };
 
 
