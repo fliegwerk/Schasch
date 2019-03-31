@@ -15,7 +15,7 @@ class Queen : public AbstractChesspiece, public Straightwalker {
 public:
     Queen() = default;
 
-    ~Queen() override;
+    ~Queen() = default;
 
     std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
 

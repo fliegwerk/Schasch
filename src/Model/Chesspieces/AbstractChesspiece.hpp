@@ -15,13 +15,16 @@
 class AbstractChesspiece {
 
 public:
-    virtual ~AbstractChesspiece() = 0;
 
-    virtual std::list <class Tile> updatePossibleMoves(Tile* position, bool forKing) = 0;
+    AbstractChesspiece() = default;
 
-    virtual std::list <class Tile> updateCoveredPieces(Tile* position) = 0;
+    virtual ~AbstractChesspiece() = default;
 
-    virtual std::optional <Tile*> updateNailedPieces(Tile* position) = 0;
+    virtual std::list<class Tile> updatePossibleMoves(Tile *position, bool forKing) = 0;
+
+    virtual std::list<class Tile> updateCoveredPieces(Tile *position) = 0;
+
+    virtual std::optional<Tile *> updateNailedPieces(Tile *position) = 0;
 
     virtual std::string getName() = 0;
 };

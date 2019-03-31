@@ -3,7 +3,6 @@
 //
 
 #include "ChesspiecesTypeContainer.hpp"
-#include "AbstractChesspiece.hpp"
 #include "King.hpp"
 #include "Queen.hpp"
 #include "Rook.hpp"

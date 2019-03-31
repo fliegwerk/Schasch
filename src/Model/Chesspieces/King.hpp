@@ -15,7 +15,7 @@ class King : public AbstractChesspiece {
 public:
     King() = default;
 
-    ~King() override;
+    ~King() = default;
 
     std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
 

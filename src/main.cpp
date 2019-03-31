@@ -5,11 +5,12 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 #include "Model/Chesspieces/ChesspiecesTypeContainer.hpp"
+#include "Model/Chesspieces/Knight.cpp"
 
 
 int main() {
 
-    ChesspiecesTypeContainer ctp;
+    Knight sos;
 
     return 0;
 }
