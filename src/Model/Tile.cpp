@@ -4,7 +4,7 @@
 
 #include "Tile.hpp"
 
-Tile::Tile(std::string name, __int8 column, __int8 row)
+Tile::Tile(std::string name, __int8_t column, __int8_t row)
         :
         name(name), column(column), row(row), id((column - 1) * 8 + row - 1) {
 

@@ -27,17 +27,17 @@ void PlayableChesspiece::setTile(Tile* tile) {
  * Searches for legal moves.
  * @param tile The current position(as pointer to a Tile of the Chessboard) of the Chesspiece calling this method.
  * @param forKing True: Method returns the threatened Tiles; False: Method returns Tiles the Chesspiece can move to. Affects Pawns(difference between moving and taking) and Kings(If enemy king is evaluating his moves, friendly King returns all Tiles around him).
- * @return A list of tiles that are legal moves.
+ * @return A vector of tiles that are legal moves.
  */
-std::list <class Tile> PlayableChesspiece::updatePossibleMoves(Tile* tile, bool forKing) {
+std::vector <class Tile> PlayableChesspiece::updatePossibleMoves(Tile* tile, bool forKing) {
     return typeOfChesspiece->updatePossibleMoves(tile, forKing);
 }
 
 /**
  * Searches for covered friendly (same team) Chesspieces.
- * @return A list of same team Chesspieces as the method calling one that are covered by it.
+ * @return A vector of same team Chesspieces as the method calling one that are covered by it.
  */
-std::list <class Tile> PlayableChesspiece::updateCoveredPieces() {
+std::vector <class Tile> PlayableChesspiece::updateCoveredPieces() {
     return typeOfChesspiece->updateCoveredPieces();
 }
 

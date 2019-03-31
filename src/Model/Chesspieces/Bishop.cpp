@@ -5,16 +5,18 @@
 #include "Bishop.hpp"
 
 //ignore forKing since the Bishop attacks the same Tiles it is able to move to
-std::list<class Tile> Bishop::updatePossibleMoves(Tile *position, bool forKing) {
-    std::list<Tile> possibleMoves;
+std::vector<class Tile> Bishop::updatePossibleMoves(Tile *position, bool forKing) {
+    std::vector<Tile> possibleMoves;
     for (__int8_t i = 0; i < 4; i++) {
-        possibleMoves.merge(
-                Straightwalker::updatePossibleMoves(directionSwitchXMod(i), directionSwitchYMod(i), position));
+        auto newMoves = Straightwalker::updatePossibleMoves(directionSwitchXMod(i), directionSwitchYMod(i), position);
+
+        possibleMoves.resize(newMoves.size() + possibleMoves.size());
+        possibleMoves.insert(possibleMoves.end(), newMoves.begin(), newMoves.end());
     }
     return possibleMoves;
 }
 
-std::list<class Tile> Bishop::updateCoveredPieces(Tile* position) {
+std::vector<class Tile> Bishop::updateCoveredPieces(Tile *position) {
 
 }
 

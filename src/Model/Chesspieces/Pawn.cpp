@@ -6,12 +6,12 @@
 
 
 
-std::list <Tile> Pawn::updatePossibleMoves(Tile* position, bool forKing) {
-    return std::list <Tile>();
+std::vector <Tile> Pawn::updatePossibleMoves(Tile* position, bool forKing) {
+    return std::vector <Tile>();
 }
 
-std::list <Tile> Pawn::updateCoveredPieces(Tile* position) {
-    return std::list <Tile>();
+std::vector <Tile> Pawn::updateCoveredPieces(Tile* position) {
+    return std::vector <Tile>();
 }
 
 //Pawn can't nail Pieces

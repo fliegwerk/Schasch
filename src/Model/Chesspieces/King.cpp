@@ -4,12 +4,12 @@
 
 #include "King.hpp"
 
-std::list <Tile> King::updatePossibleMoves(Tile* position, bool forKing) {
-    return std::list <Tile>();
+std::vector <Tile> King::updatePossibleMoves(Tile* position, bool forKing) {
+    return std::vector <Tile>();
 }
 
-std::list <Tile> King::updateCoveredPieces(Tile* position) {
-    return std::list <Tile>();
+std::vector <Tile> King::updateCoveredPieces(Tile* position) {
+    return std::vector <Tile>();
 }
 
 //King can't nail Pieces

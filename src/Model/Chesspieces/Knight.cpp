@@ -10,12 +10,12 @@ std::optional<Tile *> Knight::updateNailedPieces(Tile *position) {
     return {};
 }
 
-std::list<Tile> Knight::updatePossibleMoves(Tile *position, bool forKing) {
-    return std::list<Tile>();
+std::vector<Tile> Knight::updatePossibleMoves(Tile *position, bool forKing) {
+    return std::vector<Tile>();
 }
 
-std::list<Tile> Knight::updateCoveredPieces(Tile *position) {
-    return std::list<Tile>();
+std::vector<Tile> Knight::updateCoveredPieces(Tile *position) {
+    return std::vector<Tile>();
 }
 
 std::string Knight::getName() {

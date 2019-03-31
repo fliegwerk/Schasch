@@ -17,9 +17,9 @@ public:
 
     ~King() = default;
 
-    std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+    std::vector <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
 
-    std::list <Tile> updateCoveredPieces(Tile* position) override;
+    std::vector <Tile> updateCoveredPieces(Tile* position) override;
 
     std::optional <Tile*> updateNailedPieces(Tile* position) override;
 

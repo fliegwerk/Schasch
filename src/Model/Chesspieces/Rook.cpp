@@ -42,12 +42,12 @@ __int8_t Rook::directionSwitchYMod(__int8_t direction) {
     return 0;
 }
 
-std::list <Tile> Rook::updatePossibleMoves(Tile* position, bool forKing) {
-    return std::list <Tile>();
+std::vector <Tile> Rook::updatePossibleMoves(Tile* position, bool forKing) {
+    return std::vector <Tile>();
 }
 
-std::list <Tile> Rook::updateCoveredPieces(Tile* position) {
-    return std::list <Tile>();
+std::vector <Tile> Rook::updateCoveredPieces(Tile* position) {
+    return std::vector <Tile>();
 }
 
 std::string Rook::getName() {

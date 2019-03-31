@@ -16,9 +16,9 @@ public:
 
     ~PlayableChesspiece() = default;
 
-    std::list <class Tile> updatePossibleMoves(bool forKing);
+    std::vector <class Tile> updatePossibleMoves(Tile* tile, bool forKing);
 
-    std::list <class Tile> updateCoveredPieces();
+    std::vector <class Tile> updateCoveredPieces();
 
     std::optional <Tile*> updateNailedPieces();
 

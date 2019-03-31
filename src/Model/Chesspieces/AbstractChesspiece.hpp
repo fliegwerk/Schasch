@@ -6,8 +6,8 @@
 #define SCHASCH_CHESSPIECE_HPP
 
 #include "../Tile.hpp"
-#include <list>
 #include <optional>
+#include <vector>
 
 /**
  * Interface for every of the six types of Chesspieces.
@@ -20,9 +20,9 @@ public:
 
     virtual ~AbstractChesspiece() = default;
 
-    virtual std::list<class Tile> updatePossibleMoves(Tile *position, bool forKing) = 0;
+    virtual std::vector<Tile> updatePossibleMoves(Tile *position, bool forKing) = 0;
 
-    virtual std::list<class Tile> updateCoveredPieces(Tile *position) = 0;
+    virtual std::vector<Tile> updateCoveredPieces(Tile *position) = 0;
 
     virtual std::optional<Tile *> updateNailedPieces(Tile *position) = 0;
 
