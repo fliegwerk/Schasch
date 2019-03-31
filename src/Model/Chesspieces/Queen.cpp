@@ -51,10 +51,6 @@ __int8_t Queen::directionSwitchYMod(__int8_t direction) {
     return 0;
 }
 
-Queen::~Queen() {
-
-}
-
 std::list <Tile> Queen::updatePossibleMoves(Tile* position, bool forKing) {
     return std::list <Tile>();
 }

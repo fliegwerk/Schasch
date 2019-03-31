@@ -4,13 +4,12 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include "Model/Chesspieces/ChesspiecesTypeContainer.hpp"
-#include "Model/Chesspieces/Knight.cpp"
+#include "Model/Chesspieces/ChesspiecesTypeContainer.cpp"
 
 
 int main() {
 
-    Knight sos;
+    ChesspiecesTypeContainer sos;
 
     return 0;
 }

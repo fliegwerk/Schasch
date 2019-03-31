@@ -5,9 +5,6 @@
 #include "Pawn.hpp"
 
 
-Pawn::~Pawn() {
-
-}
 
 std::list <Tile> Pawn::updatePossibleMoves(Tile* position, bool forKing) {
     return std::list <Tile>();

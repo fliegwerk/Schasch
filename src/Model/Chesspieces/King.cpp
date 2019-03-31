@@ -4,10 +4,6 @@
 
 #include "King.hpp"
 
-King::~King() {
-
-}
-
 std::list <Tile> King::updatePossibleMoves(Tile* position, bool forKing) {
     return std::list <Tile>();
 }

@@ -17,7 +17,7 @@ public:
 
     ~Rook() = default;
 
-    std::optional <Tile*> updateNailedPieces(Tile* position);
+    std::optional <Tile*> updateNailedPieces(Tile* position) override;
 
     std::list <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
 

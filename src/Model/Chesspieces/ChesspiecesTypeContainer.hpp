@@ -7,6 +7,12 @@
 
 #include "AbstractChesspiece.hpp"
 #include "Chesspieces.hpp"
+#include "Bishop.cpp"
+#include "King.cpp"
+#include "Knight.cpp"
+#include "Pawn.cpp"
+#include "Queen.cpp"
+#include "Rook.cpp"
 /**
  * Managing the six types of Chesspieces used throughout the game.
  */
