@@ -12,12 +12,12 @@
 /** Handles the execution or undo of a chess move.
     Every instance represents one move.
 */
-
-class Move : public Observable<Move> {
+//TODO make Move inherit from Observable
+class Move /*: public Observable<Move>*/ {
 public :
     ~Move();
 
-    Move(const Tile*, const Tile*, int);
+    Move(Tile* oldTile, Tile* newTile, int undoValue);
 
 
 /**
@@ -38,6 +38,7 @@ private:
     const Tile* oldTile;
     const Tile* newTile;
     const __int8_t undoValue; //TODO switch this to bool?
+
 };
 
 

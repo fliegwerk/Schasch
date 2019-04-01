@@ -4,6 +4,9 @@
 
 #include "Move.hpp"
 
-Move::Move(const Tile* oldTile, const Tile* newTile, int undoValue) : oldTile(oldTile), newTile(newTile),
-                                                                      undoValue(undoValue) {
+Move::Move(Tile* oldTile, Tile* newTile, int undoValue) : oldTile(oldTile),
+                                                          newTile(newTile),
+                                                          undoValue(undoValue),
+                                                          oldChesspiece(oldTile->getChesspiece()),
+                                                          newChesspiece(newTile->getChesspiece()) {
 }
