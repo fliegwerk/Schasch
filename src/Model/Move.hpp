@@ -13,11 +13,12 @@
     Every instance represents one move.
 */
 
-class Move : public Observable <Move> {
+class Move : public Observable<Move> {
 public :
     ~Move();
 
-    Move(const Tile &oldTile, const Tile &newTile, const int undoValue);
+    Move(const Tile*, const Tile*, int);
+
 
 /**
  * Used to actually change states of all used Classes (i.e. playing a move).
@@ -34,8 +35,8 @@ private:
     const AbstractChesspiece* oldChesspiece;
     const AbstractChesspiece* newChesspiece;
 
-    const Tile oldTile;
-    const Tile newTile;
+    const Tile* oldTile;
+    const Tile* newTile;
     const __int8_t undoValue; //TODO switch this to bool?
 };
 
