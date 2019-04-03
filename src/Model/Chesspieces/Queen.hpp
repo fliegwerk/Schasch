@@ -6,7 +6,7 @@
 #define SCHASCH_QUEEN_HPP
 
 #include "AbstractChesspiece.hpp"
-#include "Straightwalker.hpp"
+#include "Straightwalker.cpp"
 
 /**
  *Handling Queens in the game of chess.
@@ -17,9 +17,9 @@ public:
 
     ~Queen() = default;
 
-    std::vector <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+    std::vector<Tile*> updatePossibleMoves(Tile* position, bool forKing) override;
 
-    std::vector <Tile> updateCoveredPieces(Tile* position) override;
+    std::vector<Tile*> updateCoveredPieces(Tile* position) override;
 
     std::optional <Tile*> updateNailedPieces(Tile* position) override;
 
