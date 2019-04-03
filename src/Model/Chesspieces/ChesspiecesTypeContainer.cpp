@@ -9,9 +9,10 @@ ChesspiecesTypeContainer::ChesspiecesTypeContainer() {
 }
 
 ChesspiecesTypeContainer::~ChesspiecesTypeContainer() {
-    /* for (int i = 0; i < 6; ++i) {
-         delete this->typeContainer[i];
-     }*/
+    //TODO check why this shit is crashing ses
+    //   for (int i = 0; i < 6; ++i) {
+    //   delete this->typeContainer[i];
+    //}
 }
 
 /**
