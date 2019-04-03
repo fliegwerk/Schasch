@@ -5,8 +5,6 @@
 #ifndef SCHASCH_ROOK_HPP
 #define SCHASCH_ROOK_HPP
 
-#include "AbstractChesspiece.hpp"
-#include "Straightwalker.cpp"
 
 /**
  *Handling Rooks in the game of chess.

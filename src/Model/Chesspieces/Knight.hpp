@@ -5,7 +5,6 @@
 #ifndef SCHASCH_KNIGHT_HPP
 #define SCHASCH_KNIGHT_HPP
 
-#include "AbstractChesspiece.hpp"
 
 /**
   Handling Knights in the game of chess.

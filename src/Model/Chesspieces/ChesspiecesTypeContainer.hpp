@@ -5,7 +5,6 @@
 #ifndef SCHASCH_CHESSPIECESTYPECONTAINER_HPP
 #define SCHASCH_CHESSPIECESTYPECONTAINER_HPP
 
-#include "AbstractChesspiece.hpp"
 #include "Chesspieces.hpp"
 #include "Bishop.cpp"
 #include "King.cpp"
@@ -22,10 +21,10 @@ public:
 
     ~ChesspiecesTypeContainer();
 
-    static AbstractChesspiece* getChesspieceOfType(Chesspieces typeOfChesspiece);
+    AbstractChesspiece* getChesspieceOfType(Chesspieces typeOfChesspiece);
 
 private:
-    static AbstractChesspiece* typeContainer[6];
+    AbstractChesspiece* typeContainer[6];
 
     void buildChesspieceTypeContainer();
 };

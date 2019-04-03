@@ -5,7 +5,7 @@
 #ifndef SCHASCH_STRAIGHTWALKER_HPP
 #define SCHASCH_STRAIGHTWALKER_HPP
 
-#include "../Tile.cpp"
+
 #include <vector>
 #include <string>
 #include <optional>
@@ -26,7 +26,6 @@ public:
     std::vector<Tile*> updateCoveredPieces(int xMod, int yMod, Tile* position);
 
 private:
-    //TODO check if this has to be Optional?
     std::vector<Tile*> checkForIntermediatePieces(int xMod, int yMod, Tile position, bool isWhite);
 
     virtual __int8_t directionSwitchXMod(__int8_t direction) = 0;

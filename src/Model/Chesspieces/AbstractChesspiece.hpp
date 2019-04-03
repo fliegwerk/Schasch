@@ -5,7 +5,7 @@
 #ifndef SCHASCH_CHESSPIECE_HPP
 #define SCHASCH_CHESSPIECE_HPP
 
-#include "../Tile.hpp"
+#include "../Tile.cpp"
 #include <optional>
 #include <vector>
 

@@ -6,7 +6,6 @@
 #define SCHASCH_KING_HPP
 
 
-#include "AbstractChesspiece.hpp"
 
 /**
  *Handling Kings in the game of chess.

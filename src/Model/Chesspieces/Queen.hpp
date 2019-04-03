@@ -5,8 +5,6 @@
 #ifndef SCHASCH_QUEEN_HPP
 #define SCHASCH_QUEEN_HPP
 
-#include "AbstractChesspiece.hpp"
-#include "Straightwalker.cpp"
 
 /**
  *Handling Queens in the game of chess.
