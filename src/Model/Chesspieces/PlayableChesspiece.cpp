@@ -5,7 +5,7 @@
 #include "PlayableChesspiece.hpp"
 
 /**
-* Creates a new instance of the Play.
+* Creates a new instance of the PlayableChesspiece.
 * @param isWhite Wheter the created Chesspiece is white or black
 * @param typeOfChesspiece A pointer to the class defining move behaviour
 */
