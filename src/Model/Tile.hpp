@@ -8,6 +8,8 @@
 #include <string>
 #include "Chesspieces/PlayableChesspiece.hpp"
 
+class PlayableChesspiece;
+
 /**
  * Smallest entity of the board, where one board contains 8 by 8 Tiles.
  * Every game is played on a set of 64 Tiles.

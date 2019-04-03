@@ -18,7 +18,7 @@ PlayableChesspiece::PlayableChesspiece(const bool isWhite, AbstractChesspiece* t
          * @param tile The new position of the Chesspiece.
          */
 void PlayableChesspiece::setTile(Tile* tile) {
-    this->tile = tile;
+            this->position = tile;
 }
 
 
@@ -29,7 +29,7 @@ void PlayableChesspiece::setTile(Tile* tile) {
  * @param forKing True: Method returns the threatened Tiles; False: Method returns Tiles the Chesspiece can move to. Affects Pawns(difference between moving and taking) and Kings(If enemy king is evaluating his moves, friendly King returns all Tiles around him).
  * @return A vector of tiles that are legal moves.
  */
-std::vector <class Tile> PlayableChesspiece::updatePossibleMoves(Tile* tile, bool forKing) {
+std::vector<Tile*> PlayableChesspiece::updatePossibleMoves(Tile* tile, bool forKing) {
     return typeOfChesspiece->updatePossibleMoves(tile, forKing);
 }
 
@@ -37,8 +37,8 @@ std::vector <class Tile> PlayableChesspiece::updatePossibleMoves(Tile* tile, boo
  * Searches for covered friendly (same team) Chesspieces.
  * @return A vector of same team Chesspieces as the method calling one that are covered by it.
  */
-std::vector <class Tile> PlayableChesspiece::updateCoveredPieces() {
-    return typeOfChesspiece->updateCoveredPieces();
+std::vector<Tile*> PlayableChesspiece::updateCoveredPieces() {
+    return typeOfChesspiece->updateCoveredPieces(position);
 }
 
 /**
@@ -46,7 +46,7 @@ std::vector <class Tile> PlayableChesspiece::updateCoveredPieces() {
  * @return An optional Pointer to the tile the nailed Chesspiece is standing on.
  */
 std::optional <Tile*> PlayableChesspiece::updateNailedPieces() {
-    return typeOfChesspiece->updateNailedPieces();
+    return typeOfChesspiece->updateNailedPieces(position);
 }
 
 std::string PlayableChesspiece::getName() {
@@ -54,7 +54,7 @@ std::string PlayableChesspiece::getName() {
 }
 
 Tile* PlayableChesspiece::getTile() {
-    return this->tile;
+    return this->position;
 }
 
 bool PlayableChesspiece::getIsWhite() {

@@ -20,11 +20,11 @@ public:
 
     ~PlayableChesspiece() = default;
 
-    std::vector <class Tile> updatePossibleMoves(Tile* tile, bool forKing);
+    std::vector<Tile*> updatePossibleMoves(Tile* tile, bool forKing);
 
-    std::vector <class Tile> updateCoveredPieces();
+    std::vector<Tile*> updateCoveredPieces();
 
-    std::optional <Tile*> updateNailedPieces();
+    std::optional<Tile*> updateNailedPieces();
 
     void changeTypeOfChesspiece(AbstractChesspiece* typeOfChesspiece);
 
@@ -38,7 +38,7 @@ public:
 
 private:
     AbstractChesspiece* typeOfChesspiece;
-    Tile* tile;
+    Tile* position;
     std::string name;
     const bool isWhite;
 };
