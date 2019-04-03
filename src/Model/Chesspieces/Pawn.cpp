@@ -22,3 +22,4 @@ std::optional <Tile*> Pawn::updateNailedPieces(Tile* position) {
 std::string Pawn::getName() {
     return std::__cxx11::string();
 }
+

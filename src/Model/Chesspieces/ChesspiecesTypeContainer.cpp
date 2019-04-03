@@ -3,17 +3,16 @@
 //
 
 #include "ChesspiecesTypeContainer.hpp"
-#include "King.hpp"
-#include "Queen.hpp"
-#include "Rook.hpp"
-#include "Bishop.hpp"
-#include "Knight.hpp"
-#include "Pawn.hpp"
 
 ChesspiecesTypeContainer::ChesspiecesTypeContainer() {
     buildChesspieceTypeContainer();
 }
 
+ChesspiecesTypeContainer::~ChesspiecesTypeContainer() {
+    for (int i = 0; i < 6; ++i) {
+        delete typeContainer[i];
+    }
+}
 
 /**
  * @param typeOfChesspiece The different types of Chesspieces like defined in the enum Chesspieces in Chesspiece.hpp

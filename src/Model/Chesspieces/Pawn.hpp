@@ -20,7 +20,7 @@ public:
 
     std::vector <Tile> updateCoveredPieces(Tile* position) override;
 
-    std::optional <Tile*> updateNailedPieces(Tile* position) override;
+    std::optional<Tile*> updateNailedPieces(Tile* position) override;
 
     std::string getName() override;
 };

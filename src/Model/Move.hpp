@@ -8,6 +8,7 @@
 #include "Observable.hpp"
 #include "Chesspieces/AbstractChesspiece.hpp"
 #include "Tile.hpp"
+#include "Chesspieces/PlayableChesspiece.hpp"
 
 /** Handles the execution or undo of a chess move.
     Every instance represents one move.
@@ -15,9 +16,9 @@
 //TODO make Move inherit from Observable
 class Move /*: public Observable<Move>*/ {
 public :
-    ~Move();
+    ~Move() = default;
 
-    Move(Tile* oldTile, Tile* newTile, int undoValue);
+    Move(const Tile* oldTile, const Tile* newTile, int undoValue);
 
 
 /**
@@ -32,11 +33,11 @@ public :
 
 private:
 
-    const AbstractChesspiece* oldChesspiece;
-    const AbstractChesspiece* newChesspiece;
+    PlayableChesspiece* oldChesspiece;
+    PlayableChesspiece* newChesspiece;
 
-    const Tile* oldTile;
-    const Tile* newTile;
+    Tile* oldTile;
+    Tile* newTile;
     const __int8_t undoValue; //TODO switch this to bool?
 
 };

@@ -9,36 +9,36 @@ Team::Team(bool isWhite) : isWhite(isWhite) {
     createTeamPieces(isWhite);
 }
 
-std::list <class PlayableChesspiece> Team::getChesspiecesOnBoard() {
-    return std::list <PlayableChesspiece>();
+std::vector<class PlayableChesspiece> Team::getChesspiecesOnBoard() {
+    return std::vector<PlayableChesspiece>();
 }
 
-std::list <class PlayableChesspiece> Team::getChesspiecesOffBoard() {
-    return std::list <PlayableChesspiece>();
+std::vector<class PlayableChesspiece> Team::getChesspiecesOffBoard() {
+    return std::vector<PlayableChesspiece>();
 }
 
 Team::~Team() {
 }
 
 /**
-* Generates a set of 16 Chesspieces that is stored in the ChesspiecesOnBoard list.
+* Generates a set of 16 Chesspieces that is stored in the ChesspiecesOnBoard vector.
 * @param isWhite Whether the color is white or black.
 */
 void Team::createTeamPieces(bool isWhite) {
-    teamPiecesOnBoard.push_front(
+    teamPiecesOnBoard.push_back(
             new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::King)));
-    teamPiecesOnBoard.push_front(
+    teamPiecesOnBoard.push_back(
             new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Queen)));
-    teamPiecesOnBoard.push_front(
+    teamPiecesOnBoard.push_back(
             new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Rook)));
-    teamPiecesOnBoard.push_front(
+    teamPiecesOnBoard.push_back(
             new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Bishop)));
-    teamPiecesOnBoard.push_front(
+    teamPiecesOnBoard.push_back(
             new PlayableChesspiece(isWhite, ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Knight)));
     for (int i = 0; i < 8; ++i) {
         PlayableChesspiece* chesspiece = new PlayableChesspiece(isWhite,
                                                 ChesspiecesTypeContainer::getChesspieceOfType(Chesspieces::Pawn));
-        teamPiecesOnBoard.push_front(chesspiece);
+        teamPiecesOnBoard.push_back(chesspiece);
     }
 
 }

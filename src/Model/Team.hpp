@@ -5,7 +5,7 @@
 #ifndef SCHASCH_TEAM_HPP
 #define SCHASCH_TEAM_HPP
 
-#include <list>
+#include <vector>
 
 /**
  * A Team is one party of the game of chess, i.e. the chesspieces of one color.
@@ -13,7 +13,7 @@
 class Team {
 public:
     /**
-     * Instantiating a Team: all Chesspieces of the corresponding color will be created and listed in ChesspiecesOnBoard.
+     * Instantiating a Team: all Chesspieces of the corresponding color will be created and vectored in ChesspiecesOnBoard.
      * @param isWhite Whether the color of the Team's Chesspieces is white or black.
      */
     Team(bool isWhite);
@@ -21,14 +21,14 @@ public:
     ~Team();
 
     /**
-     * @return A list of all Chesspieces of one team that are not taken yet.
+     * @return A vector of all Chesspieces of one team that are not taken yet.
      */
-    std::list <class PlayableChesspiece> getChesspiecesOnBoard();
+    std::vector<class PlayableChesspiece> getChesspiecesOnBoard();
 
 /**
- * @return A list of all Chesspieces of one team that got taken so far.
+ * @return A vector of all Chesspieces of one team that got taken so far.
  */
-    std::list <class PlayableChesspiece> getChesspiecesOffBoard();
+    std::vector<class PlayableChesspiece> getChesspiecesOffBoard();
 
 private:
     const bool isWhite;
@@ -37,14 +37,14 @@ private:
     void createTeamPieces(bool isWhite);
 
     /**
-     * List containing all Chesspieces of one Team that are not taken yet.
+     * vector containing all Chesspieces of one Team that are not taken yet.
      */
-    std::list <class PlayableChesspiece*> teamPiecesOnBoard;
+    std::vector<class PlayableChesspiece*> teamPiecesOnBoard;
 
     /**
-     * List containg all Chesspieces of one Team that got taken.
+     * vector containg all Chesspieces of one Team that got taken.
      */
-    std::list <class PlayableChesspiece*> teamPiecesOffBoard;
+    std::vector<class PlayableChesspiece*> teamPiecesOffBoard;
 };
 
 

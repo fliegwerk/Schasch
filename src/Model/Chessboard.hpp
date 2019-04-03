@@ -5,7 +5,7 @@
 #ifndef SCHASCH_CHECKBOARD_HPP
 #define SCHASCH_CHECKBOARD_HPP
 
-#include "Tile.hpp"
+#include "Tile.cpp"
 #include <string>
 
 /**

@@ -10,3 +10,12 @@ Move::Move(Tile* oldTile, Tile* newTile, int undoValue) : oldTile(oldTile),
                                                           oldChesspiece(oldTile->getChesspiece()),
                                                           newChesspiece(newTile->getChesspiece()) {
 }
+
+void Move::execute() {
+
+
+}
+
+void Move::undo() {
+
+}

@@ -6,7 +6,7 @@
 #define SCHASCH_BISHOP_HPP
 
 #include "AbstractChesspiece.hpp"
-#include "Straightwalker.hpp"
+#include "Straightwalker.cpp"
 
 
 /**
@@ -19,9 +19,9 @@ public:
 
     ~Bishop() = default;
 
-    std::vector <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+    std::vector<Tile*> updatePossibleMoves(Tile* position, bool forKing) override;
 
-    std::vector <Tile> updateCoveredPieces(Tile* position) override;
+    std::vector<Tile*> updateCoveredPieces(Tile* position) override;
 
     std::optional <Tile*> updateNailedPieces(Tile* position) override;
 
