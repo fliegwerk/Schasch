@@ -6,6 +6,8 @@
 #define SCHASCH_TEAM_HPP
 
 #include <vector>
+#include "Chesspieces/ChesspiecesTypeContainer.cpp"
+#include "Chesspieces/PlayableChesspiece.cpp"
 
 /**
  * A Team is one party of the game of chess, i.e. the chesspieces of one color.
@@ -16,7 +18,7 @@ public:
      * Instantiating a Team: all Chesspieces of the corresponding color will be created and vectored in ChesspiecesOnBoard.
      * @param isWhite Whether the color of the Team's Chesspieces is white or black.
      */
-    Team(bool isWhite);
+    Team(bool isWhite, ChesspiecesTypeContainer chesspiecesTypeContainer);
 
     ~Team();
 
@@ -34,7 +36,7 @@ private:
     const bool isWhite;
 
 
-    void createTeamPieces(bool isWhite);
+    void createTeamPieces(bool isWhite, ChesspiecesTypeContainer chesspiecesTypeContainer);
 
     /**
      * vector containing all Chesspieces of one Team that are not taken yet.

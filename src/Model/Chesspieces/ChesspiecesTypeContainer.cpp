@@ -9,9 +9,9 @@ ChesspiecesTypeContainer::ChesspiecesTypeContainer() {
 }
 
 ChesspiecesTypeContainer::~ChesspiecesTypeContainer() {
-    for (int i = 0; i < 6; ++i) {
-        delete this->typeContainer[i];
-    }
+    /* for (int i = 0; i < 6; ++i) {
+         delete this->typeContainer[i];
+     }*/
 }
 
 /**

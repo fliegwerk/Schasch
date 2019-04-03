@@ -5,9 +5,6 @@
 #ifndef SCHASCH_BISHOP_HPP
 #define SCHASCH_BISHOP_HPP
 
-#include "AbstractChesspiece.hpp"
-#include "Straightwalker.cpp"
-
 
 /**
  *Handling Bishops in the game of chess.
