@@ -16,9 +16,9 @@ public:
 
     ~Pawn() = default;
 
-    std::vector<Tile*> updatePossibleMoves(Tile* position, bool forKing) override;
+    std::vector <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
 
-    std::vector<Tile*> updateCoveredPieces(Tile* position) override;
+    std::vector <Tile> updateCoveredPieces(Tile* position) override;
 
     std::optional<Tile*> updateNailedPieces(Tile* position) override;
 
