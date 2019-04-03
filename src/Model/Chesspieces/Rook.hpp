@@ -6,7 +6,7 @@
 #define SCHASCH_ROOK_HPP
 
 #include "AbstractChesspiece.hpp"
-#include "Straightwalker.hpp"
+#include "Straightwalker.cpp"
 
 /**
  *Handling Rooks in the game of chess.
@@ -19,9 +19,9 @@ public:
 
     std::optional <Tile*> updateNailedPieces(Tile* position) override;
 
-    std::vector <Tile> updatePossibleMoves(Tile* position, bool forKing) override;
+    std::vector<Tile*> updatePossibleMoves(Tile* position, bool forKing) override;
 
-    std::vector <Tile> updateCoveredPieces(Tile* position) override;
+    std::vector<Tile*> updateCoveredPieces(Tile* position) override;
 
     std::string getName() override;
 
