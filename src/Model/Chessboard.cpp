@@ -2,19 +2,20 @@
 // Created by Janus on 29.01.19.
 //
 
+#include <iostream>
 #include "Chessboard.hpp"
 
 /**
  * Instantiates a new Chessboard with a ready to play set of Tiles.
  */
-Chessboard::Chessboard() { buildChessboard(); }
+Chessboard::Chessboard() { if (buildChessboard()) { std::cout << "Created Chessboard" << std::endl; }}
 
-Chessboard::~Chessboard() {}
+Chessboard::~Chessboard() = default;
 
 /**
  * Creates the tiles that the chessboard is pointing to in the heap
  */
-void Chessboard::buildChessboard() {
+bool Chessboard::buildChessboard() {
     for (int column = 0; column < 8; ++column) {
         for (int row = 0; row < 8; ++row) {
             char letter = column + 65;
@@ -22,6 +23,7 @@ void Chessboard::buildChessboard() {
             chessboard[column][row] = new Tile(name, column + 1, row + 1);
         }
     }
+    return true;
 }
 
 /**

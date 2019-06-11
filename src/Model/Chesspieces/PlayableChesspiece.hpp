@@ -7,7 +7,6 @@
 
 #include <vector>
 #include <optional>
-#include "AbstractChesspiece.hpp"
 
 class Tile;
 class AbstractChesspiece;

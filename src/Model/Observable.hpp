@@ -4,7 +4,6 @@
 #ifndef SCHASCH_OBSERVABLE_HPP
 #define SCHASCH_OBSERVABLE_HPP
 
-
 #include <vector>
 #include "Observer.hpp"
 /**
@@ -22,13 +21,13 @@ public:
     ~Observable();
 
     /**
-     * Adds a observer to the list of notified observers when an event happens.
+     * Adds an observer to the list of notified observers when an event happens.
      * @param observer The object that's to be notfied.
      */
     void registerObserver(Observer <T> observer);
 
     /**
-     * Removes a observer from the list of notified observers.
+     * Removes an observer from the list of notified observers.
      * @param observer The object that's to be removed.
      */
     void unregisterObserver(Observer <T> observer);

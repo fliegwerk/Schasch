@@ -22,9 +22,9 @@ private:
     /**
      * column, row
      */
-    const Tile* chessboard[8][8];
+    const Tile* chessboard[8][8]{};
 
-    void buildChessboard();
+    bool buildChessboard();
 };
 
 #endif //SCHASCH_CHECKBOARD_HPP

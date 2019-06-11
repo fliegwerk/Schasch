@@ -1,16 +1,19 @@
-#include <iostream>
-
-#include "Model/Tile.cpp"
-#include "Model/MoveHistory.cpp"
-
+#include "Model/Chessboard.hpp"
+#include "Model/MoveHistory.hpp"
+#include "Model/Team.hpp"
 
 int main() {
+    //ChesspiecesTypeContainer cp;
+    //uto white = new Team(true,cp);
+    //uto black = new Team(false,cp);
 
-    MoveHistory moveHistory;
-    const Tile* tile = new Tile("A1", 1, 1);
-    const int number = 1;
+    //auto tile = new Tile("A1",1,1);
+    //auto move = Move(tile,tile,1);
 
-    Move* move = new Move(tile, tile, number);
+
+    ChesspiecesTypeContainer chesspiecesTypeContainer;
+    auto white = Team(true, chesspiecesTypeContainer);
+
 
 
     /*

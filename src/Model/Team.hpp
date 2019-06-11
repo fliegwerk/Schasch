@@ -9,6 +9,8 @@
 #include "Chesspieces/ChesspiecesTypeContainer.cpp"
 #include "Chesspieces/PlayableChesspiece.cpp"
 
+
+class PlayableChesspiece;
 /**
  * A Team is one party of the game of chess, i.e. the chesspieces of one color.
  */
@@ -36,7 +38,7 @@ private:
     const bool isWhite;
 
 
-    void createTeamPieces(bool isWhite, ChesspiecesTypeContainer chesspiecesTypeContainer);
+    bool createTeamPieces(bool isWhite, ChesspiecesTypeContainer chesspiecesTypeContainer);
 
     /**
      * vector containing all Chesspieces of one Team that are not taken yet.

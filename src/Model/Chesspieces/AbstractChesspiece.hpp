@@ -5,9 +5,11 @@
 #ifndef SCHASCH_CHESSPIECE_HPP
 #define SCHASCH_CHESSPIECE_HPP
 
-#include "../Tile.cpp"
+
 #include <optional>
 #include <vector>
+
+class Tile;
 
 /**
  * Interface for every of the six types of Chesspieces.

@@ -8,7 +8,6 @@
 #include <string>
 #include "Chesspieces/PlayableChesspiece.hpp"
 
-class PlayableChesspiece;
 
 /**
  * Smallest entity of the board, where one board contains 8 by 8 Tiles.
@@ -40,7 +39,7 @@ private:
     const __int8_t id;
     const __int8_t row;
     const __int8_t column;
-    PlayableChesspiece* chesspiece;
+    PlayableChesspiece* chesspiece{};
 
 };
 
