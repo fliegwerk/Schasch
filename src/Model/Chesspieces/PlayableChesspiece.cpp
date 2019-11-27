@@ -2,6 +2,7 @@
 // Created by Janus on 05.02.19.
 //
 
+#include "PlayableChesspiece.hpp"
 
 /**
 * Creates a new instance of the PlayableChesspiece.

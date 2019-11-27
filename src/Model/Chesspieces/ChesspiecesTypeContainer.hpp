@@ -6,19 +6,19 @@
 #define SCHASCH_CHESSPIECESTYPECONTAINER_HPP
 
 #include "EChesspieces.hpp"
-#include "Bishop.cpp"
-#include "King.cpp"
-#include "Knight.cpp"
-#include "Pawn.cpp"
-#include "Queen.cpp"
-#include "Rook.cpp"
+#include "Bishop.hpp"
+#include "King.hpp"
+#include "Knight.hpp"
+#include "Pawn.hpp"
+#include "Queen.hpp"
+#include "Rook.hpp"
+
 /**
  * Managing the six types of Chesspieces used throughout the game.
  */
 class ChesspiecesTypeContainer {
 public:
     ChesspiecesTypeContainer();
-
     ~ChesspiecesTypeContainer();
 
     AbstractChesspiece* getChesspieceOfType(EChesspieces typeOfChesspiece);

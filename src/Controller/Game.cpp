@@ -11,28 +11,32 @@
 #include "../View/IView.hpp"
 
 
+
 /**
  * Sets up a new game.
  * @return A pointer to the newly started game.
  */
-/*
+
+
 RunningGame* Game::startNewGame() {
-   auto chesspiecesTypeContainer = new ChesspiecesTypeContainer();
+   ChesspiecesTypeContainer* chesspiecesTypeContainer = new ChesspiecesTypeContainer();
    auto chessboard = new Chessboard();
-   auto black = new Team(false);
-   auto white = new Team(true);
+   auto black = new Team(false,chesspiecesTypeContainer);
+   auto white = new Team(true,chesspiecesTypeContainer);
    auto moveHistory = new MoveHistory();
-   auto name = IView::getGameNameFromPlayer();
+   std::string name = IView::getGameNameFromPlayer();
    RunningGame* newGame = new RunningGame(chesspiecesTypeContainer, chessboard, white, black, moveHistory, name);
-   gamesList[name] = newGame;
+   //gamesList.at(name) = newGame;
    return newGame;
 }
-*/
+
+
 /**
  * Used to retrieve an ongoing game.
  * @param name String that identifies the game, set upon starting it.
  * @return A pointer to the specified game.
  */
+
 RunningGame* Game::loadGame(std::string name) {
-    return gamesList.at(name);
+    return NULL; //gamesList.at(name);
 }

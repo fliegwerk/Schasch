@@ -6,6 +6,8 @@
 #define SCHASCH_PAWN_HPP
 
 
+#include "AbstractChesspiece.hpp"
+
 /**
 *Handling Pawns in the game of chess.
 */

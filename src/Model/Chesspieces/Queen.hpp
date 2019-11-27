@@ -6,6 +6,9 @@
 #define SCHASCH_QUEEN_HPP
 
 
+#include "AbstractChesspiece.hpp"
+#include "Straightwalker.hpp"
+
 /**
  *Handling Queens in the game of chess.
  */

@@ -5,8 +5,8 @@
 #include <iostream>
 #include "Team.hpp"
 
-Team::Team(bool isWhite, ChesspiecesTypeContainer chesspiecesTypeContainer) : isWhite(isWhite) {
-    if (createTeamPieces(isWhite, chesspiecesTypeContainer)) {
+Team::Team(bool isWhite, ChesspiecesTypeContainer* chesspiecesTypeContainer) : isWhite(isWhite) {
+    if (createTeamPieces(isWhite, *chesspiecesTypeContainer)) {
         std::cout << "Created Team of color " << (isWhite ? "white" : "black") << std::endl;
     }
 }

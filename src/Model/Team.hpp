@@ -6,8 +6,8 @@
 #define SCHASCH_TEAM_HPP
 
 #include <vector>
-#include "Chesspieces/ChesspiecesTypeContainer.cpp"
-#include "Chesspieces/PlayableChesspiece.cpp"
+#include "Chesspieces/ChesspiecesTypeContainer.hpp"
+#include "Chesspieces/PlayableChesspiece.hpp"
 
 
 class PlayableChesspiece;
@@ -20,7 +20,7 @@ public:
      * Instantiating a Team: all Chesspieces of the corresponding color will be created and vectored in ChesspiecesOnBoard.
      * @param isWhite Whether the color of the Team's Chesspieces is white or black.
      */
-    Team(bool isWhite, ChesspiecesTypeContainer chesspiecesTypeContainer);
+    Team(bool isWhite, ChesspiecesTypeContainer* chesspiecesTypeContainer);
 
     ~Team();
 

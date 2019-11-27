@@ -23,5 +23,5 @@ std::vector<Tile*> Knight::updateCoveredPieces(Tile* position) {
 }
 
 std::string Knight::getName() {
-    return std::__cxx11::string();
+    return std::string();
 }

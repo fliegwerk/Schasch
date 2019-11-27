@@ -6,6 +6,7 @@
 #define SCHASCH_GAME_HPP
 
 
+#include <map>
 #include "RunningGame.hpp"
 
 /**

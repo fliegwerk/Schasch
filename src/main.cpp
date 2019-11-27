@@ -1,22 +1,16 @@
-#include "Model/Chessboard.hpp"
-#include "Model/MoveHistory.hpp"
-#include "Model/Team.hpp"
+#include <iostream>
+#include "Controller/Game.hpp"
+
 
 int main() {
-    //ChesspiecesTypeContainer cp;
-    //uto white = new Team(true,cp);
-    //uto black = new Team(false,cp);
 
-    //auto tile = new Tile("A1",1,1);
-    //auto move = Move(tile,tile,1);
+Game game;
+auto newGame = game.startNewGame();
 
-
-    ChesspiecesTypeContainer chesspiecesTypeContainer;
-    auto white = Team(true, chesspiecesTypeContainer);
+std::cout <<newGame->getName()<<std::endl;
+/*  SFML HELLO WORLD, need to #include <SFML/Graphics.hpp>
 
 
-
-    /*
     sf::RenderWindow window(sf::VideoMode(600, 360), "Hello World SFML Window");
     sf::Font font;
     //You need to pass the font file location
@@ -65,7 +59,7 @@ int main() {
         window.draw(message);
         window.display();
     }
-    return EXIT_SUCCESS;
 */
+    return EXIT_SUCCESS;
 
 }

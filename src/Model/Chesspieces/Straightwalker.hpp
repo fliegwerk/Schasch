@@ -9,6 +9,7 @@
 #include <vector>
 #include <string>
 #include <optional>
+#include "../Tile.hpp"
 
 /**
  * Additional interface for the three Chesspieces Queen, Rook and Bishop.

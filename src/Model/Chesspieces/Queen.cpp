@@ -64,5 +64,5 @@ std::vector<Tile*> Queen::updateCoveredPieces(Tile* position) {
 }
 
 std::string Queen::getName() {
-    return std::__cxx11::string();
+    return std::string();
 }

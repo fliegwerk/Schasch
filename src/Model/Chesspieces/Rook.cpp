@@ -55,5 +55,5 @@ std::vector<Tile*> Rook::updateCoveredPieces(Tile* position) {
 }
 
 std::string Rook::getName() {
-    return std::__cxx11::string();
+    return std::string();
 }

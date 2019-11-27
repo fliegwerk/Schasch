@@ -3,3 +3,7 @@
 //
 
 #include "IView.hpp"
+
+std::string IView::getGameNameFromPlayer() {
+    return std::string("test");
+}

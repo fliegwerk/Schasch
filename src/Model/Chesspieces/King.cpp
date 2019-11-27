@@ -2,6 +2,7 @@
 // Created by Janus on 22.01.19.
 //
 
+#include <vector>
 #include "King.hpp"
 
 std::vector<Tile*> King::updatePossibleMoves(Tile* position, bool forKing) {
@@ -22,5 +23,5 @@ std::optional<Tile*> King::updateNailedPieces(Tile* position) {
 }
 
 std::string King::getName() {
-    return std::__cxx11::string();
+    return std::string();
 }

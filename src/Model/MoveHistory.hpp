@@ -5,7 +5,7 @@
 #ifndef SCHASCH_MOVEHISTORY_HPP
 #define SCHASCH_MOVEHISTORY_HPP
 
-#include "Move.cpp"
+#include "Move.hpp"
 
 /**
  * Implementation of a stack used to store the history of moves of one game.

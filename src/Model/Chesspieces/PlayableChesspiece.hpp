@@ -7,9 +7,8 @@
 
 #include <vector>
 #include <optional>
+#include "AbstractChesspiece.hpp"
 
-class Tile;
-class AbstractChesspiece;
 
 /**
  * Actual Chesspiece used for playing. It connects the (abstract) type of Chesspiece with a position on the Chessboard.

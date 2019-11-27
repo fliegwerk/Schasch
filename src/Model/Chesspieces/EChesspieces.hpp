@@ -6,7 +6,7 @@
 #define SCHASCH_ECHESSPIECES_HPP
 
 #include "AbstractChesspiece.hpp"
-#include "Straightwalker.cpp"
+#include "Straightwalker.hpp"
 
 /**
  * Listing the Chesspieces in decreasing order sorted by value

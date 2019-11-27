@@ -65,5 +65,5 @@ __int8_t Bishop::directionSwitchYMod(__int8_t direction) {
 }
 
 std::string Bishop::getName() {
-    return std::__cxx11::string();
+    return std::string();
 }
