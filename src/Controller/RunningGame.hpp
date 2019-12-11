@@ -22,7 +22,7 @@ public:
 
     bool checkMove();
 
-    const std::string getName() const;
+    [[nodiscard]] std::string getName() const;
 
 private:
     const std::string name;
