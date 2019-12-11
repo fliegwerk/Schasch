@@ -17,6 +17,7 @@
  * @return A pointer to the newly started game.
  */
 
+std::map<std::string, RunningGame *> Game::gamesList;
 
 RunningGame* Game::startNewGame() {
    ChesspiecesTypeContainer* chesspiecesTypeContainer = new ChesspiecesTypeContainer();
@@ -26,7 +27,7 @@ RunningGame* Game::startNewGame() {
    auto moveHistory = new MoveHistory();
    std::string name = IView::getGameNameFromPlayer();
    RunningGame* newGame = new RunningGame(chesspiecesTypeContainer, chessboard, white, black, moveHistory, name);
-   //gamesList.at(name) = newGame;
+    gamesList.emplace(name, newGame);
    return newGame;
 }
 
@@ -38,5 +39,5 @@ RunningGame* Game::startNewGame() {
  */
 
 RunningGame* Game::loadGame(std::string name) {
-    return NULL; //gamesList.at(name);
+    return gamesList.at(name);
 }
