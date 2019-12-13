@@ -4,4 +4,4 @@ Doxygen
 *.png
 cmake-build-debug
 cmake-build-release
-_Resources/
+
