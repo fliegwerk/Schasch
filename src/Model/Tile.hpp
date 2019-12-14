@@ -23,23 +23,25 @@ public:
      * @param row Defining the x position, value from 1 through 8
      */
     Tile(std::string name, __int8_t column, __int8_t row);
-    ~Tile();
 
-    const int getId() const;
+    ~Tile() = default;
 
-    const int getRow() const;
+    int getId() const;
 
-    const int getColumn() const;
+    int getRow() const;
 
-    PlayableChesspiece* getChesspiece();
+    int getColumn() const;
 
-    void setChesspiece(PlayableChesspiece* chesspiece);
+    PlayableChesspiece *getChesspiece();
+
+    void setChesspiece(PlayableChesspiece *chesspiece);
+
 private:
     const std::string name;
     const __int8_t id;
     const __int8_t row;
     const __int8_t column;
-    PlayableChesspiece* chesspiece{};
+    PlayableChesspiece *chesspiece{};
 
 };
 

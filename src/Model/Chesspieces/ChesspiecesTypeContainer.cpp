@@ -8,18 +8,12 @@ ChesspiecesTypeContainer::ChesspiecesTypeContainer() {
     buildChesspieceTypeContainer();
 }
 
-ChesspiecesTypeContainer::~ChesspiecesTypeContainer() {
-    //TODO check why this shit is crashing ses
-    //   for (int i = 0; i < 6; ++i) {
-    //   delete this->typeContainer[i];
-    //}
-}
 
 /**
  * @param typeOfChesspiece The different types of Chesspieces like defined in the enum Chesspieces in Chesspiece.hpp
  * @return Pointer to the requested type of Chesspiece
  */
-AbstractChesspiece* ChesspiecesTypeContainer::getChesspieceOfType(EChesspieces typeOfChesspiece) {
+AbstractChesspiece *ChesspiecesTypeContainer::getChesspieceOfType(EChesspieces typeOfChesspiece) {
     return typeContainer[(int) typeOfChesspiece]; //TODO check if this is working lol
 }
 

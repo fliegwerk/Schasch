@@ -15,13 +15,13 @@ class King : public AbstractChesspiece {
 public:
     King() = default;
 
-    ~King() = default;
+    ~King() override = default;
 
-    std::vector<Tile*> updatePossibleMoves(Tile* position, bool forKing) override;
+    std::vector<Tile *> updatePossibleMoves(Tile *position, bool forKing) override;
 
-    std::vector<Tile*> updateCoveredPieces(Tile* position) override;
+    std::vector<Tile *> updateCoveredPieces(Tile *position) override;
 
-    std::optional <Tile*> updateNailedPieces(Tile* position) override;
+    std::optional<Tile *> updateNailedPieces(Tile *position) override;
 
     std::string getName() override;
 

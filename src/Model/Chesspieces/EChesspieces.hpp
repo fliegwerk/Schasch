@@ -12,7 +12,7 @@
  * Listing the Chesspieces in decreasing order sorted by value
  */
 enum class EChesspieces {
-    King,Queen,Rook,Bishop,Knight,Pawn
+    King, Queen, Rook, Bishop, Knight, Pawn
 };
 
 #endif //SCHASCH_ECHESSPIECES_HPP

@@ -16,16 +16,16 @@ public:
 
     ~MoveHistory();
 
-    void push(Move* move);
+    void push(Move *move);
 
-    Move* pop();
+    Move *pop();
 
-    Move* top();
+    Move *top();
 
-    Move* topMinusOne();
+    Move *topMinusOne();
 
 private:
-    std::vector<Move*> history;
+    std::vector<Move *> history;
     int topindex;
 };
 

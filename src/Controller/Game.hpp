@@ -14,12 +14,12 @@
  */
 class Game {
 public:
-    static RunningGame* startNewGame();
+    static RunningGame *startNewGame();
 
-    static RunningGame* loadGame(std::string name);
+    static RunningGame *loadGame(const std::string &name);
 
 private:
-    static std::map <std::string, RunningGame*> gamesList;
+    static std::map<std::string, RunningGame *> gamesList;
 };
 
 

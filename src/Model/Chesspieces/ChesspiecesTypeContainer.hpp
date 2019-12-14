@@ -19,12 +19,13 @@
 class ChesspiecesTypeContainer {
 public:
     ChesspiecesTypeContainer();
+
     ~ChesspiecesTypeContainer();
 
-    AbstractChesspiece* getChesspieceOfType(EChesspieces typeOfChesspiece);
+    AbstractChesspiece *getChesspieceOfType(EChesspieces typeOfChesspiece);
 
 private:
-    AbstractChesspiece* typeContainer[6];
+    AbstractChesspiece *typeContainer[6];
 
     void buildChesspieceTypeContainer();
 };

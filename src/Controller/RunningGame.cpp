@@ -4,15 +4,16 @@
 
 #include "RunningGame.hpp"
 
-RunningGame::RunningGame(ChesspiecesTypeContainer* chesspiecesTypeContainer, Chessboard* chessboard, Team* white,
-                         Team* black, MoveHistory* moveHistory, std::string id)
+RunningGame::RunningGame(ChesspiecesTypeContainer *chesspiecesTypeContainer, Chessboard *chessboard, Team *white,
+                         Team *black, MoveHistory *moveHistory, const std::string &
+id)
         :
         chesspiecesTypeContainer(chesspiecesTypeContainer), chessboard(chessboard), white(white), black(black),
         moveHistory(moveHistory), name(name) {
 
 }
 
-const std::string RunningGame::getName() const {
+std::string RunningGame::getName() const {
     return name;
 }
 

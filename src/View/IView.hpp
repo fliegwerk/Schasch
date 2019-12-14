@@ -7,13 +7,15 @@
 
 
 #include <string>
+
 /**
- * Interface View neeeds to implement.
+ * Interface View needs to implement shait.
  */
 class IView {
 
     //TODO remove static ?
-    public: static std::string getGameNameFromPlayer();
+public:
+    static std::string getGameNameFromPlayer();
 
 };
 

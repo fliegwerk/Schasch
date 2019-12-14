@@ -5,7 +5,7 @@
 #ifndef SCHASCH_MOVE_HPP
 #define SCHASCH_MOVE_HPP
 
-#include <stdint.h>
+#include <cstdint>
 #include "Observable.hpp"
 #include "Tile.hpp"
 
@@ -22,7 +22,7 @@ class Move /*: public Observable<Move>*/ {
 public :
     ~Move() = default;
 
-    Move(Tile* oldTile, Tile* newTile, int undoValue);
+    Move(Tile *oldTile, Tile *newTile, int undoValue);
 
 
 /**
@@ -37,11 +37,11 @@ public :
 
 private:
 
-    PlayableChesspiece* oldChesspiece;
-    PlayableChesspiece* newChesspiece;
+    PlayableChesspiece *oldChesspiece;
+    PlayableChesspiece *newChesspiece;
 
-    Tile* oldTile;
-    Tile* newTile;
+    Tile *oldTile;
+    Tile *newTile;
     const __int8_t undoValue; //TODO switch this to bool?
 
 };

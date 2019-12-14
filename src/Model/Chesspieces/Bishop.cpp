@@ -5,8 +5,8 @@
 #include "Bishop.hpp"
 
 //ignore forKing since the Bishop attacks the same Tiles it is able to move to
-std::vector<Tile*> Bishop::updatePossibleMoves(Tile* position, bool forKing) {
-    std::vector<Tile*> possibleMoves;
+std::vector<Tile *> Bishop::updatePossibleMoves(Tile *position, bool forKing) {
+    std::vector<Tile *> possibleMoves;
     for (__int8_t i = 0; i < 4; i++) {
         auto newMoves = Straightwalker::updatePossibleMoves(directionSwitchXMod(i), directionSwitchYMod(i), position);
 
@@ -16,8 +16,8 @@ std::vector<Tile*> Bishop::updatePossibleMoves(Tile* position, bool forKing) {
     return possibleMoves;
 }
 
-std::vector<Tile*> Bishop::updateCoveredPieces(Tile* position) {
-    std::vector<Tile*> possibleMoves;
+std::vector<Tile *> Bishop::updateCoveredPieces(Tile *position) {
+    std::vector<Tile *> possibleMoves;
     for (__int8_t i = 0; i < 4; i++) {
         auto newMoves = Straightwalker::updateCoveredPieces(directionSwitchXMod(i), directionSwitchYMod(i), position);
 
@@ -27,10 +27,10 @@ std::vector<Tile*> Bishop::updateCoveredPieces(Tile* position) {
     return possibleMoves;
 }
 
-std::optional<Tile*> Bishop::updateNailedPieces(Tile* position) {
+std::optional<Tile *> Bishop::updateNailedPieces(Tile *position) {
     for (__int8_t i = 0; i < 4; i++) {
-        std::optional<Tile*> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
-                                                                              directionSwitchXMod(i), position);
+        std::optional<Tile *> nailedPiece = Straightwalker::updateNailedPieces(directionSwitchYMod(i),
+                                                                               directionSwitchXMod(i), position);
         if (nailedPiece.has_value())
             return nailedPiece;
     }

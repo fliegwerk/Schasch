@@ -4,7 +4,7 @@
 
 #include "Observable.hpp"
 
-template <class T>
+template<class T>
 
 void Observable<T>::notifyAll(T state) {
     for (Observer<T> observer : this->observers) {
@@ -12,14 +12,14 @@ void Observable<T>::notifyAll(T state) {
     }
 }
 
-template <class T>
+template<class T>
 
 void Observable<T>::registerObserver(Observer<T> observer) {
-    this->observers.insert(observer);
+    this->observers.push_back(observer);
 }
 
-template <class T>
+template<class T>
 
-void Observable<T>::unregisterObserver(Observer<T> observer){
-    this->observers.remove(observer);
+void Observable<T>::unregisterObserver(Observer<T> observer) {
+    this->observers.erase(observer);
 }

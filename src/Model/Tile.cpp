@@ -4,32 +4,32 @@
 
 #include "Tile.hpp"
 
+#include <utility>
+
 Tile::Tile(std::string name, __int8_t column, __int8_t row)
         :
-        name(name), column(column), row(row), id((column - 1) * 8 + row - 1) {
+        name(std::move(name)), column(column), row(row), id((column - 1) * 8 + row - 1) {
 
 }
 
-Tile::~Tile() {
+Tile::~Tile() = default;
 
-}
-
-const int Tile::getId() const {
+int Tile::getId() const {
     return this->id;
 }
 
-const int Tile::getRow() const {
+int Tile::getRow() const {
     return this->row;
 }
 
-const int Tile::getColumn() const {
+int Tile::getColumn() const {
     return this->column;
 }
 
-PlayableChesspiece* Tile::getChesspiece() {
+PlayableChesspiece *Tile::getChesspiece() {
     return this->chesspiece;
 }
 
-void Tile::setChesspiece(PlayableChesspiece* chesspiece) {
+void Tile::setChesspiece(PlayableChesspiece *chesspiece) {
     this->chesspiece = chesspiece;
 }

@@ -6,6 +6,7 @@
 
 #include <vector>
 #include "Observer.hpp"
+
 /**
  * Observable Implementation of the observer pattern.
  * @tparam T The object containing updated information.
@@ -17,20 +18,21 @@ private:
     std::vector<Observer<T>> observers;
 
 public:
-    Observable();
-    ~Observable();
+    Observable() = default;
+
+    ~Observable() = default;
 
     /**
      * Adds an observer to the list of notified observers when an event happens.
      * @param observer The object that's to be notfied.
      */
-    void registerObserver(Observer <T> observer);
+    void registerObserver(Observer<T> observer);
 
     /**
      * Removes an observer from the list of notified observers.
      * @param observer The object that's to be removed.
      */
-    void unregisterObserver(Observer <T> observer);
+    void unregisterObserver(Observer<T> observer);
 
     /**
      * Used to notify every observer on the list of observers about an event.

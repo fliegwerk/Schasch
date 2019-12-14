@@ -8,25 +8,23 @@ MoveHistory::MoveHistory() {
     topindex = 0;
 }
 
-MoveHistory::~MoveHistory() {
+MoveHistory::~MoveHistory() = default;
 
-}
-
-void MoveHistory::push(Move* move) {
+void MoveHistory::push(Move *move) {
     history.assign(topindex, move);
     topindex++;
 }
 
-Move* MoveHistory::pop() {
+Move *MoveHistory::pop() {
     topindex--;
     return (history.back());
 }
 
 
-Move* MoveHistory::top() {
+Move *MoveHistory::top() {
     return history.at(topindex);
 }
 
-Move* MoveHistory::topMinusOne() {
+Move *MoveHistory::topMinusOne() {
     return history.at(topindex - 1);
 }

@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Team.hpp"
 
-Team::Team(bool isWhite, ChesspiecesTypeContainer* chesspiecesTypeContainer) : isWhite(isWhite) {
+Team::Team(bool isWhite, ChesspiecesTypeContainer *chesspiecesTypeContainer) : isWhite(isWhite) {
     if (createTeamPieces(isWhite, *chesspiecesTypeContainer)) {
         std::cout << "Created Team of color " << (isWhite ? "white" : "black") << std::endl;
     }
@@ -19,8 +19,7 @@ std::vector<class PlayableChesspiece> Team::getChesspiecesOffBoard() {
     return std::vector<PlayableChesspiece>();
 }
 
-Team::~Team() {
-}
+Team::~Team() = default;
 
 /**
 * Generates a set of 16 Chesspieces that is stored in the ChesspiecesOnBoard vector.
@@ -38,9 +37,9 @@ bool Team::createTeamPieces(bool isWhite, ChesspiecesTypeContainer chesspiecesTy
     teamPiecesOnBoard.push_back(
             new PlayableChesspiece(isWhite, chesspiecesTypeContainer.getChesspieceOfType(EChesspieces::Knight)));
     for (int i = 0; i < 8; ++i) {
-        PlayableChesspiece* chesspiece = new PlayableChesspiece(isWhite,
-                                                                chesspiecesTypeContainer.getChesspieceOfType(
-                                                                        EChesspieces::Pawn));
+        auto chesspiece = new PlayableChesspiece(isWhite,
+                                                 chesspiecesTypeContainer.getChesspieceOfType(
+                                                         EChesspieces::Pawn));
         teamPiecesOnBoard.push_back(chesspiece);
     }
     return true;

@@ -16,13 +16,13 @@ class Rook : public AbstractChesspiece, public Straightwalker {
 public:
     Rook() = default;
 
-    ~Rook() = default;
+    ~ Rook() override = default;
 
-    std::optional <Tile*> updateNailedPieces(Tile* position) override;
+    std::optional<Tile *> updateNailedPieces(Tile *position) override;
 
-    std::vector<Tile*> updatePossibleMoves(Tile* position, bool forKing) override;
+    std::vector<Tile *> updatePossibleMoves(Tile *position, bool forKing) override;
 
-    std::vector<Tile*> updateCoveredPieces(Tile* position) override;
+    std::vector<Tile *> updateCoveredPieces(Tile *position) override;
 
     std::string getName() override;
 

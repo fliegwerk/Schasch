@@ -20,14 +20,14 @@ public:
 
     ~Straightwalker() = default;
 
-    std::vector<Tile*> updatePossibleMoves(int xMod, int yMod, Tile* position);
+    static std::vector<Tile *> updatePossibleMoves(int xMod, int yMod, Tile *position);
 
-    std::optional<Tile*> updateNailedPieces(int xMod, int yMod, Tile* position);
+    static std::optional<Tile *> updateNailedPieces(int xMod, int yMod, Tile *position);
 
-    std::vector<Tile*> updateCoveredPieces(int xMod, int yMod, Tile* position);
+    static std::vector<Tile *> updateCoveredPieces(int xMod, int yMod, Tile *position);
 
 private:
-    std::vector<Tile*> checkForIntermediatePieces(int xMod, int yMod, Tile position, bool isWhite);
+    static std::vector<Tile *> checkForIntermediatePieces(int xMod, int yMod, Tile position, bool isWhite);
 
     virtual __int8_t directionSwitchXMod(__int8_t direction) = 0;
 

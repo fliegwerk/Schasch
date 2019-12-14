@@ -31,7 +31,7 @@ bool Chessboard::buildChessboard() {
  * @param id used to identify the requested Tile.
  * @return a pointer to the specified Tile.
  */
-const Tile* Chessboard::getTile(int id) const {
+const Tile *Chessboard::getTile(int id) const {
     //correction (+1) since columns and rows are values from 1 through 8
     return chessboard[(id / 8)][(id % 8)];
 }

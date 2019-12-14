@@ -4,10 +4,10 @@
 
 int main() {
 
-Game game;
-auto newGame = game.startNewGame();
 
-std::cout <<newGame->getName()<<std::endl;
+    auto newGame = Game::startNewGame();
+
+    std::cout << newGame->getName() << std::endl;
 /*  SFML HELLO WORLD, need to #include <SFML/Graphics.hpp>
 
 

@@ -14,15 +14,16 @@
 class Chessboard {
 public:
     Chessboard();
+
     ~Chessboard();
 
-    const Tile* getTile(int id) const;
+    const Tile *getTile(int id) const;
 
 private:
     /**
      * column, row
      */
-    const Tile* chessboard[8][8]{};
+    const Tile *chessboard[8][8]{};
 
     bool buildChessboard();
 };
