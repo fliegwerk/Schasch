@@ -31,6 +31,9 @@ void IView::start() {
     //2D Camera
     sf::View view;
 
+    //Textures
+    TextureTank tt;
+
     //grabs 'best' video mode (according to SFML docs)
     //TODO check if buggy on Windows due to created window being bigger than screen
     sf::RenderWindow renderWindow(sf::VideoMode::getDesktopMode(), "Schasch", sf::Style::Fullscreen);

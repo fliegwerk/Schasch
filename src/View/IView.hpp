@@ -8,10 +8,10 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "ETexturesChesspieces.h"
+#include "ETexturesTiles.h"
+#include "TextureTank.h"
 
-/**
- * Interface View needs to implement shait.
- */
 class IView {
 
     //TODO remove static ?
