@@ -20,7 +20,7 @@ class ChesspiecesTypeContainer {
 public:
     ChesspiecesTypeContainer();
 
-    ~ChesspiecesTypeContainer();
+    ~ChesspiecesTypeContainer() = default;
 
     AbstractChesspiece *getChesspieceOfType(EChesspieces typeOfChesspiece);
 

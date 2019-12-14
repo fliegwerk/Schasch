@@ -12,7 +12,6 @@ Tile::Tile(std::string name, __int8_t column, __int8_t row)
 
 }
 
-Tile::~Tile() = default;
 
 int Tile::getId() const {
     return this->id;
