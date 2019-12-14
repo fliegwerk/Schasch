@@ -3,9 +3,14 @@
 //
 
 #include <cstring>
+#include <thread>
 #include "TextureTank.h"
 #include "ETexturesChesspieces.h"
 #include "ETexturesTiles.h"
+
+TextureTank::TextureTank() {
+    std::thread(loadTextures);
+}
 
 
 void TextureTank::loadTextures() {
@@ -17,11 +22,14 @@ void TextureTank::loadTextures() {
         chesspieces.at(i) = texture;
     }
 
+
     //Tile textures
     for (int i = 0; i < sizeof(ETexturesTiles); ++i) {
         sf::Texture texture;
         texture.loadFromFile(ETexturesTilesFileNames.at((ETexturesTiles) i));
         tiles.at(i) = texture;
     }
+
+    null.loadFromFile("./res/GameContent/null.png");
 
 }

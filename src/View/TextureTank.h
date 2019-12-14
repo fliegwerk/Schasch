@@ -11,6 +11,7 @@
 
 class TextureTank {
 private:
+    //vectors for fast access with .at (vs map)
     std::vector<sf::Texture> chesspieces{18};
     std::vector<sf::Texture> tiles{5};
     sf::Texture null;
@@ -19,11 +20,12 @@ private:
 
 public:
 
-    TextureTank() = default;
+    TextureTank();
 
     ~TextureTank() = default;
 
 
+    void task1();
 };
 
 

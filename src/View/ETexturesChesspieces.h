@@ -30,24 +30,24 @@ enum ETexturesChesspieces {
 
 //TODO insert final filenames
 const std::map<ETexturesChesspieces, const std::string> ETexturesChesspiecesFileNames{
-        {KingWhite,    "king_white.png"},
-        {KingBlack,    "king_black.png"},
-        {KingShadow,   "king_shadow.png"},
-        {QueenWhite,   "queen0.png"},
-        {QueenBlack,   "queen1.png"},
-        {QueenShadow,  "null.png"},
-        {RookWhite,    "rook_white.png"},
-        {RookBlack,    "rook_black.png"},
-        {RookShadow,   "rook_shadow.png"},
-        {BishopWhite,  "bishop0.png"},
-        {BishopBlack,  "bishop1.png"},
-        {BishopShadow, "null.png"},
-        {KnightWhite,  "knight_white.png"},
-        {KnightBlack,  "knight_black.png"},
-        {KnightShadow, "knight_shadow.png"},
-        {PawnWhite,    "pawn0.png"},
-        {PawnBlack,    "pawn1.png"},
-        {PawnShadow,   "null.png"}
+        {KingWhite,    "./res/GameContent/king_white.png"},
+        {KingBlack,    "./res/GameContent/king_black.png"},
+        {KingShadow,   "./res/GameContent/king_shadow.png"},
+        {QueenWhite,   "./res/GameContent/queen0.png"},
+        {QueenBlack,   "./res/GameContent/queen1.png"},
+        {QueenShadow,  "./res/GameContent/null.png"},
+        {RookWhite,    "./res/GameContent/rook_white.png"},
+        {RookBlack,    "./res/GameContent/rook_black.png"},
+        {RookShadow,   "./res/GameContent/rook_shadow.png"},
+        {BishopWhite,  "./res/GameContent/bishop0.png"},
+        {BishopBlack,  "./res/GameContent/bishop1.png"},
+        {BishopShadow, "./res/GameContent/null.png"},
+        {KnightWhite,  "./res/GameContent/knight_white.png"},
+        {KnightBlack,  "./res/GameContent/knight_black.png"},
+        {KnightShadow, "./res/GameContent/knight_shadow.png"},
+        {PawnWhite,    "./res/GameContent/pawn0.png"},
+        {PawnBlack,    "./res/GameContent/pawn1.png"},
+        {PawnShadow,   "./res/GameContent/null.png"}
 };
 
 #endif //SCHASCH_ETEXTURESCHESSPIECES_H

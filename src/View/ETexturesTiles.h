@@ -13,11 +13,11 @@ enum ETexturesTiles {
 };
 //TODO insert final filenames
 const std::map<ETexturesTiles, const std::string> ETexturesTilesFileNames{
-        {TileWhite,        "Tile0.png"},
-        {TileBlack,        "Tile1.png"},
-        {TileWhiteCovered, "TileCoveredWhite.png"},
-        {TileBlackCovered, "TileCoveredBlack.png"},
-        {TilePossible,     "TilePossible.png"},
+        {TileWhite,        "./res/GameContent/Tile0.png"},
+        {TileBlack,        "./res/GameContent/Tile1.png"},
+        {TileWhiteCovered, "./res/GameContent/TileCoveredWhite.png"},
+        {TileBlackCovered, "./res/GameContent/TileCoveredBlack.png"},
+        {TilePossible,     "./res/GameContent/TilePossible.png"},
 };
 
 #endif //SCHASCH_ETEXTURESTILES_H
