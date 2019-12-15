@@ -33,3 +33,15 @@ void TextureTank::loadTextures() {
     null.loadFromFile("./res/GameContent/null.png");
 
 }
+
+const std::vector<sf::Texture> &TextureTank::getChesspieces() const {
+    return chesspieces;
+}
+
+const std::vector<sf::Texture> &TextureTank::getTiles() const {
+    return tiles;
+}
+
+const sf::Texture &TextureTank::getNull() const {
+    return null;
+}

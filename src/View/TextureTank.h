@@ -19,6 +19,11 @@ private:
     void loadTextures();
 
 public:
+    const std::vector<sf::Texture> &getChesspieces() const;
+
+    const std::vector<sf::Texture> &getTiles() const;
+
+    const sf::Texture &getNull() const;
 
     TextureTank();
 

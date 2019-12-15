@@ -23,6 +23,8 @@ public:
 private:
     bool focused;
 
+    TextureTank tt;
+
     void runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *renderTexture, sf::View *view);
 
     void checkWindowEvents(sf::RenderWindow *renderWindow);
@@ -31,6 +33,10 @@ private:
 
     void applyViewModification(sf::View *view);
 
+    int mouseX = 0;
+    int mouseY = 0;
+    int zoom = 1;
+    int frame = 0;
 
 };
 

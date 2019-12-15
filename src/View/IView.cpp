@@ -31,8 +31,6 @@ void IView::start() {
     //2D Camera
     sf::View view;
 
-    //Textures
-    TextureTank tt;
 
     //grabs 'best' video mode (according to SFML docs)
     //TODO check if buggy on Windows due to created window being bigger than screen
@@ -68,7 +66,7 @@ void IView::runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *renderT
     focused = true;
 
     //reference to texture does not change with changing texture
-    const sf::Sprite sprite(renderTexture->getTexture());
+    sf::Sprite sprite(renderTexture->getTexture());
 
     while (renderWindow->isOpen()) {
 
@@ -83,7 +81,15 @@ void IView::runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *renderT
 
         //drawing selected part to Window
         renderWindow->clear();
+
+        sf::Texture testure;
+        testure.loadFromFile("/home/malte/Pictures/laser_neon_barrier_4k-1920x1080.jpg");
+        sf::Sprite sprite;
+        sprite.setTexture(testure);
         renderWindow->draw(sprite);
+
+
+        renderWindow->setView(*view);
         renderWindow->display();
     }
 }
@@ -104,6 +110,18 @@ void IView::checkWindowEvents(sf::RenderWindow *renderWindow) {
             case sf::Event::KeyPressed:
                 break;
 
+            case sf::Event::MouseMoved:
+
+                mouseX = event.mouseMove.x;
+                mouseY = event.mouseMove.y;
+                std::cout << mouseX << ", " << mouseY << std::endl;
+                break;
+            case sf::Event::MouseWheelScrolled:
+
+                if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel)
+                    zoom += event.mouseWheelScroll.delta;
+                break;
+
                 // we don't process other types of events
             default:
                 break;
@@ -112,11 +130,27 @@ void IView::checkWindowEvents(sf::RenderWindow *renderWindow) {
 }
 
 void IView::applyViewModification(sf::View *view) {
-    view->setViewport(sf::FloatRect(0, 0, 300, 300));
+    view->zoom(zoom);
+    view->rotate(2.f);
+    view->setCenter(mouseX, mouseY);
+    view->setViewport(sf::FloatRect(0, 0, 1, 1));
 }
 
 void IView::drawToRenderTexture(sf::RenderTexture *renderTexture) {
-    renderTexture->clear();
+    renderTexture->clear(sf::Color::Red);
+    sf::VertexArray triangle(sf::Triangles, 3);
+
+// define the position of the triangle's points
+    triangle[0].position = sf::Vector2f(10.f, 10.f);
+    triangle[1].position = sf::Vector2f(zoom, 10.f);
+    triangle[2].position = sf::Vector2f(mouseX, mouseY);
+
+// define the color of the triangle's points
+    triangle[0].color = sf::Color::Red;
+    triangle[1].color = sf::Color::Blue;
+    triangle[2].color = sf::Color::Green;
+    renderTexture->draw(triangle);
+
 
     renderTexture->display();
 }
