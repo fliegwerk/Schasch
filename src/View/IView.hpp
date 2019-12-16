@@ -23,13 +23,17 @@ public:
 private:
     bool focused;
 
+    //textures are being loaded upon instantiation in a separate thread
     TextureTank tt;
 
-    void runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *renderTexture, sf::View *view);
+    void
+    runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *base,
+              const std::vector<sf::RenderTexture *> renderTextures,
+              const std::vector<sf::Sprite> &sprites, sf::View *view);
 
     void checkWindowEvents(sf::RenderWindow *renderWindow);
 
-    void drawToRenderTexture(sf::RenderTexture *renderTexture);
+    void drawToRenderTexture(sf::RenderTexture *base, std::vector<sf::Sprite> sprites);
 
     void applyViewModification(sf::View *view);
 

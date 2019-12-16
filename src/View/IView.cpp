@@ -22,20 +22,36 @@ void IView::start() {
         std::cout << "Couldn't load font file. Aborting";
     }
 
-    //big drawing canvas
-    sf::RenderTexture renderTexture;
-    if (!renderTexture.create(500, 500)) {
-        return;
-    }
-
-    //2D Camera
-    sf::View view;
-
-
-    //grabs 'best' video mode (according to SFML docs)
+    //grabs 'best' video mode (according to SFML docs), window which gets shown to user
     //TODO check if buggy on Windows due to created window being bigger than screen
     sf::RenderWindow renderWindow(sf::VideoMode::getDesktopMode(), "Schasch", sf::Style::Fullscreen);
 
+
+    //big drawing canvas
+    sf::RenderTexture base;
+    if (!base.create(renderWindow.getSize().x * 4, renderWindow.getSize().y * 4)) {
+        return;
+    }
+
+    //subcanvas that will be drawn to the base
+    sf::RenderTexture splash;
+    if (!splash.create(renderWindow.getSize().x, renderWindow.getSize().y)) {
+        return;
+    }
+
+    sf::RenderTexture mainMenu;
+    if (!mainMenu.create(renderWindow.getSize().x, renderWindow.getSize().y)) {
+        return;
+    }
+
+    sf::RenderTexture board;
+    if (!board.create(renderWindow.getSize().x, renderWindow.getSize().y)) {
+        return;
+    }
+
+
+    //2D Camera
+    sf::View view;
 
     /*
      * object customisation ###################################################
@@ -53,43 +69,68 @@ void IView::start() {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
+    //vector  holding all the references to the different frames
+    //plus setting initial positions on base
+    std::vector<sf::Sprite> sprites;
+    std::vector<sf::RenderTexture *> renderTextures;
+
+
+    sprites.emplace_back(splash.getTexture());
+    renderTextures.emplace_back(&splash);
+    sprites.back().setPosition(0, 0);
+
+    sprites.emplace_back(mainMenu.getTexture());
+    renderTextures.emplace_back(&mainMenu);
+    sprites.back().setPosition(renderWindow.getSize().x * 0.1, 0);
+
+    sprites.emplace_back(board.getTexture());
+    renderTextures.emplace_back(&board);
+    sprites.back().setPosition(renderWindow.getSize().x * 0.2, 0);
 
     /*
      * now let the pros do the work ###########################################
      */
 
-    IView::runWindow(&renderWindow, &renderTexture, &view);
+    IView::runWindow(&renderWindow, &base, renderTextures, sprites, &view);
 }
 
-void IView::runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *renderTexture, sf::View *view) {
+void IView::runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *base,
+                      const std::vector<sf::RenderTexture *> renderTextures, const std::vector<sf::Sprite> &sprites,
+                      sf::View *view) {
 
     focused = true;
 
-    //reference to texture does not change with changing texture
-    sf::Sprite sprite(renderTexture->getTexture());
+    sf::Sprite baseS(base->getTexture());
 
     while (renderWindow->isOpen()) {
 
         //Input handling and shait
         checkWindowEvents(renderWindow);
 
+        renderTextures.at(0)->clear(sf::Color::Cyan);
+        renderTextures.at(1)->clear(sf::Color::Red);
+        renderTextures.at(2)->clear(sf::Color::Green);
+
+        renderTextures.at(0)->draw(sf::Sprite(tt.getTiles().at(0)));
+        renderTextures.at(1)->draw(sf::Sprite(tt.getChesspieces().at(0)));
+        renderTextures.at(2)->draw(sf::Sprite(tt.getChesspieces().at(5)));
+
+        renderTextures.at(0)->display();
+        renderTextures.at(1)->display();
+        renderTextures.at(2)->display();
+
+
+
         //updating canvas
-        drawToRenderTexture(renderTexture);
+        drawToRenderTexture(base, sprites);
 
-        //selecting part to be shown to user
+        //moving camera
         applyViewModification(view);
+        base->setView(*view);
 
-        //drawing selected part to Window
+        //user output
         renderWindow->clear();
-
-        sf::Texture testure;
-        testure.loadFromFile("/home/malte/Pictures/laser_neon_barrier_4k-1920x1080.jpg");
-        sf::Sprite sprite;
-        sprite.setTexture(testure);
-        renderWindow->draw(sprite);
-
-
-        renderWindow->setView(*view);
+        renderWindow->draw(baseS);
         renderWindow->display();
     }
 }
@@ -106,8 +147,10 @@ void IView::checkWindowEvents(sf::RenderWindow *renderWindow) {
                 renderWindow->close();
                 break;
 
-                // key pressed
+
             case sf::Event::KeyPressed:
+                if (event.key.code == sf::Keyboard::Escape)
+                    renderWindow->close();
                 break;
 
             case sf::Event::MouseMoved:
@@ -130,27 +173,22 @@ void IView::checkWindowEvents(sf::RenderWindow *renderWindow) {
 }
 
 void IView::applyViewModification(sf::View *view) {
-    view->zoom(zoom);
-    view->rotate(2.f);
-    view->setCenter(mouseX, mouseY);
-    view->setViewport(sf::FloatRect(0, 0, 1, 1));
+    view->zoom(1);
+    view->reset(sf::FloatRect(mouseX, mouseY, 1920, 1080));
+    view->setViewport(sf::FloatRect(0, 0, 0.5, 0.5));
 }
 
-void IView::drawToRenderTexture(sf::RenderTexture *renderTexture) {
-    renderTexture->clear(sf::Color::Red);
-    sf::VertexArray triangle(sf::Triangles, 3);
+//big canvas
+void IView::drawToRenderTexture(sf::RenderTexture *base, std::vector<sf::Sprite> sprites) {
 
-// define the position of the triangle's points
-    triangle[0].position = sf::Vector2f(10.f, 10.f);
-    triangle[1].position = sf::Vector2f(zoom, 10.f);
-    triangle[2].position = sf::Vector2f(mouseX, mouseY);
+    base->clear();
 
-// define the color of the triangle's points
-    triangle[0].color = sf::Color::Red;
-    triangle[1].color = sf::Color::Blue;
-    triangle[2].color = sf::Color::Green;
-    renderTexture->draw(triangle);
+    //TODO add state logic
+    for (sf::Sprite sprite: sprites) {
+        base->draw(sprite);
+        std::cout << "drew to " << sprite.getPosition().x << ", " << sprite.getPosition().y << std::endl;
+    }
+    std::cout << std::endl;
 
-
-    renderTexture->display();
+    base->display();
 }
