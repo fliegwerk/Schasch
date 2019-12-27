@@ -11,7 +11,6 @@ std::string IView::getGameNameFromPlayer() {
 
 
 void IView::start() {
-
     /*
      * object instantiation ###################################################
      */
@@ -81,11 +80,11 @@ void IView::start() {
 
     sprites.emplace_back(mainMenu.getTexture());
     renderTextures.emplace_back(&mainMenu);
-    sprites.back().setPosition(renderWindow.getSize().x * 0.1, 0);
+    sprites.back().setPosition(renderWindow.getSize().x, 0);
 
     sprites.emplace_back(board.getTexture());
     renderTextures.emplace_back(&board);
-    sprites.back().setPosition(renderWindow.getSize().x * 0.2, 0);
+    sprites.back().setPosition(renderWindow.getSize().x * 2, 0);
 
     /*
      * now let the pros do the work ###########################################
@@ -111,9 +110,9 @@ void IView::runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *base,
         renderTextures.at(1)->clear(sf::Color::Red);
         renderTextures.at(2)->clear(sf::Color::Green);
 
-        renderTextures.at(0)->draw(sf::Sprite(tt.getTiles().at(0)));
-        renderTextures.at(1)->draw(sf::Sprite(tt.getChesspieces().at(0)));
-        renderTextures.at(2)->draw(sf::Sprite(tt.getChesspieces().at(5)));
+        renderTextures.at(0)->draw(spriteTank.getSprite(ETexturesTiles::TileBlack));
+        renderTextures.at(1)->draw(spriteTank.getSprite(ETexturesChesspieces::KnightBlack, 0));
+        renderTextures.at(1)->draw(spriteTank.getSprite(ETexturesChesspieces::KnightShadow, 0));
 
         renderTextures.at(0)->display();
         renderTextures.at(1)->display();
@@ -157,7 +156,6 @@ void IView::checkWindowEvents(sf::RenderWindow *renderWindow) {
 
                 mouseX = event.mouseMove.x;
                 mouseY = event.mouseMove.y;
-                std::cout << mouseX << ", " << mouseY << std::endl;
                 break;
             case sf::Event::MouseWheelScrolled:
 
@@ -174,7 +172,8 @@ void IView::checkWindowEvents(sf::RenderWindow *renderWindow) {
 
 void IView::applyViewModification(sf::View *view) {
     view->zoom(1);
-    view->reset(sf::FloatRect(mouseX, mouseY, 1920, 1080));
+    view->rotate(2.f);
+    view->reset(sf::FloatRect(mouseX * 4, mouseY * 4, 1920, 1080));
     view->setViewport(sf::FloatRect(0, 0, 0.5, 0.5));
 }
 
@@ -186,9 +185,7 @@ void IView::drawToRenderTexture(sf::RenderTexture *base, std::vector<sf::Sprite>
     //TODO add state logic
     for (sf::Sprite sprite: sprites) {
         base->draw(sprite);
-        std::cout << "drew to " << sprite.getPosition().x << ", " << sprite.getPosition().y << std::endl;
     }
-    std::cout << std::endl;
 
     base->display();
 }

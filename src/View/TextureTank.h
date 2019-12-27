@@ -8,29 +8,28 @@
 
 #include <vector>
 #include <SFML/Graphics/Texture.hpp>
+#include "ETexturesChesspieces.h"
+#include "ETexturesTiles.h"
 
 class TextureTank {
 private:
-    //vectors for fast access with .at (vs map)
-    std::vector<sf::Texture> chesspieces{18};
-    std::vector<sf::Texture> tiles{5};
+    //TODO change to map
+    std::map<ETexturesChesspieces, sf::Texture> chesspieces{};
+    std::map<ETexturesTiles, sf::Texture> tiles{};
     sf::Texture null;
 
-    void loadTextures();
+    void initTextures();
 
 public:
-    const std::vector<sf::Texture> &getChesspieces() const;
+    const sf::Texture &getChesspiece(ETexturesChesspieces chesspiece) const;
 
-    const std::vector<sf::Texture> &getTiles() const;
+    const sf::Texture &getTile(ETexturesTiles tile) const;
 
     const sf::Texture &getNull() const;
 
     TextureTank();
 
     ~TextureTank() = default;
-
-
-    void task1();
 };
 
 

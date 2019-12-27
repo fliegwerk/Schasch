@@ -50,4 +50,25 @@ const std::map<ETexturesChesspieces, const std::string> ETexturesChesspiecesFile
         {PawnShadow,   "./res/GameContent/null.png"}
 };
 
+const std::map<ETexturesChesspieces, const int> counts{
+        {KingWhite,    1},
+        {KingBlack,    1},
+        {KingShadow,   2},
+        {QueenWhite,   1},
+        {QueenBlack,   1},
+        {QueenShadow,  2},
+        {RookWhite,    2},
+        {RookBlack,    2},
+        {RookShadow,   4},
+        {BishopWhite,  2},
+        {BishopBlack,  2},
+        {BishopShadow, 4},
+        {KnightWhite,  2},
+        {KnightBlack,  2},
+        {KnightShadow, 4},
+        {PawnWhite,    8},
+        {PawnBlack,    8},
+        {PawnShadow,   16}
+};
+
 #endif //SCHASCH_ETEXTURESCHESSPIECES_H

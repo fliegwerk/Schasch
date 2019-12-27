@@ -11,6 +11,7 @@
 #include "ETexturesChesspieces.h"
 #include "ETexturesTiles.h"
 #include "TextureTank.h"
+#include "SpriteTank.h"
 
 class IView {
 
@@ -23,12 +24,11 @@ public:
 private:
     bool focused;
 
-    //textures are being loaded upon instantiation in a separate thread
-    TextureTank tt;
+    SpriteTank spriteTank;
 
     void
     runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *base,
-              const std::vector<sf::RenderTexture *> renderTextures,
+              std::vector<sf::RenderTexture *> renderTextures,
               const std::vector<sf::Sprite> &sprites, sf::View *view);
 
     void checkWindowEvents(sf::RenderWindow *renderWindow);
@@ -41,6 +41,7 @@ private:
     int mouseY = 0;
     int zoom = 1;
     int frame = 0;
+
 
 };
 
