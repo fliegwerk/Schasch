@@ -50,7 +50,7 @@ const std::map<ETexturesChesspieces, const std::string> ETexturesChesspiecesFile
         {PawnShadow,   "./res/GameContent/null.png"}
 };
 
-const std::map<ETexturesChesspieces, const int> counts{
+const std::map<ETexturesChesspieces, const int> countChesspieces{
         {KingWhite,    1},
         {KingBlack,    1},
         {KingShadow,   2},

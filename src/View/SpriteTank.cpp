@@ -20,22 +20,28 @@ void SpriteTank::initSprites() {
     //Chesspiece and shadow Sprites, accessible via enum reference
     for (auto chesspiece : magic_enum::enum_entries<ETexturesChesspieces>()) {
         //create number of sprites as stated in coonts
-        std::vector<sf::Sprite> vector(counts.at(chesspiece.first),
+        std::vector<sf::Sprite> vector(countChesspieces.at(chesspiece.first),
                                        sf::Sprite(tt.getChesspiece(chesspiece.first)));
         chesspieces.emplace(chesspiece.first, vector);
     }
 
     for (auto tile : magic_enum::enum_entries<ETexturesTiles>()) {
-        tiles.emplace(tile.first, sf::Sprite(tt.getTile(tile.first)));
+        tiles.emplace(tile.first,
+                      std::vector<sf::Sprite>(countsTile.at(tile.first), sf::Sprite(tt.getTile(tile.first))));
     }
 
     null.setTexture(tt.getNull());
 }
 
-sf::Sprite SpriteTank::getSprite(ETexturesChesspieces chesspiece, int8_t index) {
-    return chesspieces.at(chesspiece).at(index);
+
+std::vector<sf::Sprite> SpriteTank::getSprites(ETexturesChesspieces chesspiece) {
+    return chesspieces.at(chesspiece);
 }
 
-sf::Sprite SpriteTank::getSprite(ETexturesTiles tile) {
+std::vector<sf::Sprite> SpriteTank::getSprites(ETexturesTiles tile) {
     return tiles.at(tile);
+}
+
+const sf::Sprite SpriteTank::getNull() const {
+    return null;
 }

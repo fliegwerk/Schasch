@@ -16,7 +16,7 @@ class SpriteTank {
 private:
     //TODO change to map
     std::map<ETexturesChesspieces, std::vector<sf::Sprite>> chesspieces{};
-    std::map<ETexturesTiles, sf::Sprite> tiles{};
+    std::map<ETexturesTiles, std::vector<sf::Sprite>> tiles{};
     sf::Sprite null{};
     TextureTank tt{};
 
@@ -29,9 +29,11 @@ public:
 
     bool moveChesspieceSprite(ETexturesChesspieces chesspiece, int8_t index, Position position);
 
-    sf::Sprite getSprite(ETexturesChesspieces chesspiece, int8_t index);
+    std::vector<sf::Sprite> getSprites(ETexturesChesspieces chesspiece);
 
-    sf::Sprite getSprite(ETexturesTiles tile);
+    const sf::Sprite getNull() const;
+
+    std::vector<sf::Sprite> getSprites(ETexturesTiles tile);
 };
 
 

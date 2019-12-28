@@ -20,4 +20,12 @@ const std::map<ETexturesTiles, const std::string> ETexturesTilesFileNames{
         {TilePossible,     "./res/GameContent/TilePossible.png"},
 };
 
+const std::map<ETexturesTiles, uint8_t> countsTile{
+        {TileWhite,        32},
+        {TileBlack,        32},
+        {TileWhiteCovered, 32},
+        {TileBlackCovered, 32},
+        {TilePossible,     21},
+};
+
 #endif //SCHASCH_ETEXTURESTILES_H

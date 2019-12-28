@@ -26,6 +26,8 @@ public:
     float getY() {
         return y;
     }
+
+
 };
 
 #endif //SCHASCH_POSITION_H

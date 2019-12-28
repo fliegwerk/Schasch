@@ -9,6 +9,10 @@ std::string IView::getGameNameFromPlayer() {
     return std::string("test");
 }
 
+IView::IView() {
+    boardSizeX = sf::VideoMode::getDesktopMode().width;
+    boardSizeY = sf::VideoMode::getDesktopMode().height;
+}
 
 void IView::start() {
     /*
@@ -43,11 +47,8 @@ void IView::start() {
         return;
     }
 
-    sf::RenderTexture board;
-    if (!board.create(renderWindow.getSize().x, renderWindow.getSize().y)) {
-        return;
-    }
-
+    sf::Vector2u size(boardSizeX, boardSizeY);
+    board.init(size, spriteTank);
 
     //2D Camera
     sf::View view;
@@ -82,9 +83,6 @@ void IView::start() {
     renderTextures.emplace_back(&mainMenu);
     sprites.back().setPosition(renderWindow.getSize().x, 0);
 
-    sprites.emplace_back(board.getTexture());
-    renderTextures.emplace_back(&board);
-    sprites.back().setPosition(renderWindow.getSize().x * 2, 0);
 
     /*
      * now let the pros do the work ###########################################
@@ -106,29 +104,20 @@ void IView::runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *base,
         //Input handling and shait
         checkWindowEvents(renderWindow);
 
-        renderTextures.at(0)->clear(sf::Color::Cyan);
-        renderTextures.at(1)->clear(sf::Color::Red);
-        renderTextures.at(2)->clear(sf::Color::Green);
 
-        renderTextures.at(0)->draw(spriteTank.getSprite(ETexturesTiles::TileBlack));
-        renderTextures.at(1)->draw(spriteTank.getSprite(ETexturesChesspieces::KnightBlack, 0));
-        renderTextures.at(1)->draw(spriteTank.getSprite(ETexturesChesspieces::KnightShadow, 0));
-
-        renderTextures.at(0)->display();
-        renderTextures.at(1)->display();
-        renderTextures.at(2)->display();
-
-
+        base->clear();
+        base->draw(sf::Sprite(board.getUpToDateRt().getTexture()));
+        base->display();
 
         //updating canvas
-        drawToRenderTexture(base, sprites);
+        //drawToRenderTexture(base, sprites);
 
         //moving camera
         applyViewModification(view);
         base->setView(*view);
 
         //user output
-        renderWindow->clear();
+        renderWindow->clear(sf::Color::Green);
         renderWindow->draw(baseS);
         renderWindow->display();
     }
@@ -189,3 +178,4 @@ void IView::drawToRenderTexture(sf::RenderTexture *base, std::vector<sf::Sprite>
 
     base->display();
 }
+

@@ -12,6 +12,7 @@
 #include "ETexturesTiles.h"
 #include "TextureTank.h"
 #include "SpriteTank.h"
+#include "Board.h"
 
 class IView {
 
@@ -21,10 +22,17 @@ public:
 
     void start();
 
+    IView();
+
+    ~IView() = default;
+
 private:
     bool focused;
 
+    Board board;
     SpriteTank spriteTank;
+
+    int boardSizeX, boardSizeY;
 
     void
     runWindow(sf::RenderWindow *renderWindow, sf::RenderTexture *base,
@@ -41,7 +49,6 @@ private:
     int mouseY = 0;
     int zoom = 1;
     int frame = 0;
-
 
 };
 

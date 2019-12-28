@@ -31,8 +31,8 @@ find_package(SFML 2.5 COMPONENTS system window graphics audio network REQUIRED)
 
 
 ## === Set SOURCE/HEADER variables ===
-set(SOURCE_FILES src/main.cpp src/Controller/Game.cpp src/Controller/RunningGame.cpp src/Model/Chesspieces/Bishop.cpp src/Model/Chesspieces/ChesspiecesTypeContainer.cpp src/Model/Chesspieces/King.cpp src/Model/Chesspieces/Knight.cpp src/Model/Chesspieces/Pawn.cpp src/Model/Chesspieces/PlayableChesspiece.cpp src/Model/Chesspieces/Queen.cpp src/Model/Chesspieces/Rook.cpp src/Model/Chesspieces/Straightwalker.cpp src/Model/Chessboard.cpp src/Model/Move.cpp src/Model/MoveHistory.cpp src/Model/Observable.cpp src/Model/Observer.cpp src/Model/Team.cpp src/Model/Tile.cpp src/View/IView.cpp src/View/TextureTank.cpp src/View/TextureTank.h)
-set(HEADER_FILES src/View/ETexturesChesspieces.h src/View/ETexturesTiles.h src/View/SpriteTank.cpp src/View/SpriteTank.h src/View/Position.h lib/magic_enum-master/include/magic_enum.h)
+set(SOURCE_FILES src/main.cpp src/Controller/Game.cpp src/Controller/RunningGame.cpp src/Model/Chesspieces/Bishop.cpp src/Model/Chesspieces/ChesspiecesTypeContainer.cpp src/Model/Chesspieces/King.cpp src/Model/Chesspieces/Knight.cpp src/Model/Chesspieces/Pawn.cpp src/Model/Chesspieces/PlayableChesspiece.cpp src/Model/Chesspieces/Queen.cpp src/Model/Chesspieces/Rook.cpp src/Model/Chesspieces/Straightwalker.cpp src/Model/Chessboard.cpp src/Model/Move.cpp src/Model/MoveHistory.cpp src/Model/Observable.cpp src/Model/Observer.cpp src/Model/Team.cpp src/Model/Tile.cpp src/View/IView.cpp src/View/TextureTank.cpp src/View/TextureTank.h src/View/Board.cpp src/View/Board.h)
+set(HEADER_FILES src/View/ETexturesChesspieces.h src/View/ETexturesTiles.h src/View/SpriteTank.cpp src/View/SpriteTank.h src/View/Position.h lib/magic_enum-master/include/magic_enum.h src/View/Board.cpp src/View/Board.h)
 
 ## === GENERATING EXECUTABLES ===
 ## -- Executable "CMake_Test" --
